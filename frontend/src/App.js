@@ -1,8 +1,16 @@
-
+import AllRoutes from "./Pages/AllRoutes/AllRoutes"
+import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Signup/Signup";
 
 function App() {
   return (
-         <h1>Hello world</h1>
+    <div>
+ 
+    <Signup/>
+    <Login/>
+  
+    </div>
+       
   );
 }
 
