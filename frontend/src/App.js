@@ -10,10 +10,16 @@ import Signup from "./Pages/Signup/Signup";
 function App() {
   return (
     <div>
+
+ 
+   
+  
+
       <Navbar />
       <HomePage />
       <Signup />
       <Login />
+
     </div>
   );
 }
