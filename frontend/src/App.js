@@ -16,6 +16,11 @@ import Signup from "./Pages/Signup/Signup";
 function App() {
   return (
     <div>
+
+ 
+   
+  
+
       <Navbar />
       <Dreamjob />
       <JobType/>
@@ -27,7 +32,10 @@ function App() {
       {/* <HomePage /> */}
       {/* <Signup />
       <Login /> */}
-      <Footer />
+      <Footer 
+      <HomePage />
+      <Signup />
+      <Login />
     </div>
   );
 }
