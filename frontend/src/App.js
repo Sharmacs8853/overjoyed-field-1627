@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+import './App.css';
+=======
 import { Box } from '@chakra-ui/react';
 import Dreamjob from './Components/DreamJob/Dreamjob.jsx';
 import Featuredcompanies from './Components/Featuredcompanies/Featuredcompanies.jsx';
@@ -8,13 +11,15 @@ import Navbar from './Components/Navbar/Navbar.jsx'
 import PrepareInterview from './Components/PrepareInterview/PrepareInterview.jsx';
 import TopCompany from './Components/TopCompany/TopCompany.jsx';
 import VideoFrofile from './Components/VideoProfile/VideoFrofile.jsx';
+>>>>>>> 4a38572e451acdec22deed38c700214bdfd3b502
 import HomePage from './Pages/Home/HomePage';
-// import AllRoutes from "./Pages/AllRoutes/AllRoutes"
-import Login from "./Pages/Login/Login";
-import Signup from "./Pages/Signup/Signup";
 
 function App() {
   return (
+<<<<<<< HEAD
+    <div className="App">
+      <HomePage/>
+=======
     <div>
 
  
@@ -36,6 +41,7 @@ function App() {
       <HomePage />
       <Signup />
       <Login />
+>>>>>>> 4a38572e451acdec22deed38c700214bdfd3b502
     </div>
   );
 }
