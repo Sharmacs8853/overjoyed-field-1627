@@ -1,0 +1,23 @@
+.logo{
+    height: 40px;
+    padding-top: 10px;
+    padding-right: 100px;
+}
+.nav-box{
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-menu{
+    margin-top: 5px;
+}
+.hover-border:hover{
+    border-bottom: 4px solid orangered;
+    border-radius: 3px;
+}
