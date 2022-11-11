@@ -1,17 +1,20 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import Mainpage from '../MainPage/mainpage';
+import AdminDashboard from '../AdminDashboard/AdminDashboard';
+//import Login from '../Login/Login';
+// import Mainpage from '../MainPage/Mainpage';
+
 
 const AllRoutes = () => {
   return (
     <Routes>
-<<<<<<< HEAD
-        <Route path="/" element={<Mainpage />}></Route>
-=======
+
+
         {/* <Route path="/" element={<Mainpage />}></Route> */}
-        <Route path="/user/login" element={<Login />}></Route>
-        <Route path="/user/signup" element={<Signup/>}></Route>
->>>>>>> 4a38572e451acdec22deed38c700214bdfd3b502
+        {/* <Route path="/user/login" element={<Login />}></Route> */}
+
+        <Route path="/user/Signup" element={<Signup/>}></Route>
+        <Route path="/admindashboard" element={<AdminDashboard/>}></Route>
     </Routes>
   )
 }
