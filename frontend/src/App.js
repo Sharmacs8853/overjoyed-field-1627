@@ -23,21 +23,23 @@ function App() {
     <div>
 
      <Navbar />
-      {/* <AllRoutes/> */}
-      {/* <Dreamjob /> */}
-      {/* <JobType/> */}
-      {/* <TopCompany/> */}
-      {/* <Featuredcompanies /> */}
-      {/* <VideoFrofile/> */}
-      {/* <PrepareInterview /> */}
-   
+
+      <AllRoutes/>
+      <Dreamjob />
+      <JobType/>
+      <TopCompany/>
+      <Featuredcompanies />
+      <VideoFrofile/>
+      <PrepareInterview />
+      <Growcareer />
+      
+      <Footer />
       {/* <HomePage /> */}
       {/* <Signup />
       <Login /> */}
-      <Signup/>
-      <Login/>
      
-  
+     
+
     </div>
   );
 }
