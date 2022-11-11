@@ -1,0 +1,19 @@
+.inertview-div{
+    min-height: 400px;
+    width: 100%;
+    margin-top:10px ;
+    margin-bottom: 10px;
+}
+.inertview-div-inner{
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+.grid-box{
+    border-radius: 10px 5px 10px 5px;
+    border: 1px solid rgb(239, 235, 235);
+}
+.rroundborder{
+    border-radius: 15px 5px 15px 5px;
+    border: 1px solid rgb(207, 203, 203);
+}
