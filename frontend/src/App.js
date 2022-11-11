@@ -14,7 +14,7 @@ import VideoFrofile from './Components/VideoProfile/VideoFrofile.jsx';
 import HomePage from './Pages/Home/HomePage';
 import Signup from './Pages/Signup/Signup.jsx';
 import Login from './Pages/Login/Login.jsx';
-import LoginSmall from './Pages/Login/LoginSmall.jsx';
+
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
       {/* <HomePage /> */}
       {/* <Signup />
       <Login /> */}
-      {/* <Signup/> */}
+      <Signup/>
       <Login/>
      
   

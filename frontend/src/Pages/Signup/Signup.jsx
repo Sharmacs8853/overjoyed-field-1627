@@ -22,9 +22,11 @@ import {
   MainSignup,
 } from "../../Style/signup.style";
 import { useState } from "react";
+import { SmallLoginWrapper, WhatsappWrapperSmall } from "../../Style/loginsmall";
 // import { useDispatch, useSelector } from "react-redux";
 // import { signup } from "../../Redux/AuthReducer/action";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import {AiOutlineArrowLeft} from "react-icons/ai"
 const Signup = () => {
   // const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -35,6 +37,7 @@ const Signup = () => {
   const [mobile,setMobile]=useState("");
   const [password, setPassword] = useState("");
   const [update,setUpdate]=useState(false)
+
   // const { isError, isLoading } = useSelector((state) => {
   //   return {
   //     isError: state.AuthReducer.isError,
@@ -67,9 +70,72 @@ const Signup = () => {
     // }
   };
 
+
+  const [size,setWindowSize]=useState(window.innerWidth)
+  React.useEffect(() => {
+    function handleResize() {
+     setWindowSize(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+  })
+
+
   return (
     // isLoading ?<img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img> :
-    <MainSignup>
+   
+   size<1300 ? <SmallLoginWrapper>
+    <div className="small-login-main-div">
+    <h2 className="small-login-heading">Register for free to apply jobs</h2>
+    <p className="small-login-para">5 Lakh+ recruiters are looking for candidates on Naukri</p>
+    <form className="small-signup-form">
+      <label className="small-signup-label">Full Name</label><br/>
+      <input className="small-signup-input" type="text" ></input><br/>
+      <label className="small-signup-label">Email Address</label><br/>
+      <input className="small-signup-input" type="email" ></input><br/>
+      <label className="small-signup-label">Password</label><br/>
+      <input className="small-signup-input" type="password" ></input><br/>
+      <label className="small-signup-label">Mobile Number</label><br/>
+      <input className="small-signup-input" type="password" ></input><br/>
+      <label className="small-signup-label">Gender</label><br/>
+      <select>
+      <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="male">Female</option>
+        <option value="male">Transgender</option>
+      </select>
+     
+   
+      
+    </form>
+    <p className="dis">Companies hire candidates of all genders to celebrate diversity</p>
+  
+   
+ 
+ <WhatsappWrapperSmall>
+  
+                  <div>
+                  <input  className="whats-input" type="checkbox" onChange={(e)=>setUpdate(e.target.checked)}></input>
+                  </div>
+                 
+                  <div className="whats-span">  
+                   <p>Send me important updates on</p> 
+                   <span  className="whats-span">
+                      <img className="whats-img" src="https://static.naukimg.com/s/7/104/assets/images/whatsappicon.0011d8c1.png"></img>
+                    </span>
+                    <span  className="whats-span">WhatsApp</span>
+                  </div>
+                </WhatsappWrapperSmall>
+                <TermsWrapper>
+                  <p>
+                    By clicking Register, you agree to the
+                    <span> Terms and Conditions</span> &{" "}
+                    <span>Privacy Policy</span> of Naukri.com
+                  </p>
+                </TermsWrapper>
+                <button  className="small-signup-register">Register</button>
+              
+                </div>
+</SmallLoginWrapper> : <MainSignup>
       <SignupWrapper>
         <SignupWrapperLeft>
           <img

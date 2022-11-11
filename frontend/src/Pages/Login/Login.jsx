@@ -13,7 +13,8 @@ import { NavLink } from "../../Style/signup.style"
 import { useDispatch,useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom"
 import {IoMdCheckmark} from "react-icons/io"
-import LoginSmall from "./LoginSmall";
+import { LoginSmallWrapper } from "../../Style/loginRender.style";
+
 const Login = () => {
 
   // const dispatch=useDispatch();
@@ -79,29 +80,20 @@ const Login = () => {
     // isLoading ?<img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img>  :
     
     
-    size<1300 ? <LoginSmall/> : <LoginWrapper>
+     size<1300 ?<LoginSmallWrapper>
+           <div  className="small-login-main-div">
+           <h2 className="small-login-heading">Login to Naukri</h2>
+    <p className="small-login-para">5 Lakh+ recruiters are looking for candidates on Naukri</p>
+    <form className="small-signup-form">
+      <label className="small-signup-label">Email Address</label><br/>
+      <input className="small-signup-input" type="email" ></input><br/>
+      <label className="small-signup-label">Password</label><br/>
+      <input className="small-signup-input" type="password" ></input><br/>
+       </form>   
+            <button  className="small-signup-register">Login</button>
+          </div>
+     </LoginSmallWrapper>:<LoginWrapper>
   
-      {/* <HeadingWrapper>
-        <h1>Sign In</h1>
-      </HeadingWrapper>
-      <form onSubmit={handleSubmit}>
-        <InputWrapper>
-          <label>Email</label>
-          <br />
-          <input id="Login-input" value={email} type="text" onChange={(e)=>setEmail(e.target.value)}></input>
-          <br />
-          <label>Password</label>
-          <br />
-          <input vlaue={password} type="text" onChange={(e)=>setPassword(e.target.value)}></input>
-          <SubmitWrapper>
-          <input type="submit"></input>
-          </SubmitWrapper>
-        
-        </InputWrapper>
-      </form>
-      <h5>Don't have an account ?<NavLink to="/signup">Sign Up</NavLink></h5> */}
-
-   
         <LeftDivWrapper>
           <div id="left-main-div">
           <h2 className="left-heading">New to Naukri?</h2>
