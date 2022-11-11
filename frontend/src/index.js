@@ -13,13 +13,15 @@ import {store} from "./Redux/store"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
- <BrowserRouter> 
+
     <Provider store={store}>
+      <BrowserRouter>
       <ChakraProvider>
         <App />
       </ChakraProvider>
+      </BrowserRouter>
     </Provider>
-  </BrowserRouter>
+
 );
-reportWebVitals();
+
 

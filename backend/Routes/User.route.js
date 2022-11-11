@@ -10,7 +10,7 @@ userController.post("/signup", async (req, res) => {
   const existing_user = await userModel.findOne({ email });
 
   if (existing_user) {
-    res.send("user already exist")
+    res.send({"msg":"user already exist"})
     return;
   }
   bcrypt.hash(password, 4, async function (err, hash) {
@@ -27,7 +27,7 @@ userController.post("/signup", async (req, res) => {
       });
 
       await new_user.save();
-      res.send({msg:"signup succesfull.."});
+      res.send({"msg":"signup succesfull.."});
     }
   });
 });
@@ -53,7 +53,7 @@ userController.post("/login", async (req, res) => {
         }
         if(result){
           const token = jwt.sign({user_id}, process.env.SECRET);  
-          res.send({message : "Login successfull", token})
+          res.send({"msg": "Login successfull", token:token,document:user})
         }
         else{
           alert("login failed")
@@ -61,7 +61,7 @@ userController.post("/login", async (req, res) => {
         }
       });
     }else{
-      res.send({msg:"User not found ..please login with correct credentials.."})
+      res.send({"msg":"User not found ..please login with correct credentials.."})
     }
 })
 

@@ -5,7 +5,7 @@ export const LoginWrapper=styled.div`
  align-items: center;
  justify-content: center;
 padding-top:30px;
-margin-top:-30px;
+margin-top:0px;
  background-color: rgb(250,250,250);
  padding-bottom:80px;
     

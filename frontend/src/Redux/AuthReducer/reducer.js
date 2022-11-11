@@ -1,6 +1,7 @@
 import * as types from "./actionTypes";
-
+import {accessData,saveData} from "../../Utils/appLocalStorage"
 const initialState={
+    // token:accessData("token") || "",
     isAuth:false,
     isLoading:false,
     isError:false,
@@ -13,7 +14,9 @@ export const reducer=(state=initialState,action)=>{
    switch(type){
     case types.SIGNUP_REQUEST: return {...state,isLoading:true,isError:false}
     
-    case types.SIGNUP_SUCCESS: return {...state,isLoading:false,isError:false};
+    case types.SIGNUP_SUCCESS: 
+    // saveData("key","value")
+    return {...state,isLoading:false,isError:false};
     
     case types.SIGNUP_FAILURE: return {...state,isError:true,isLoading:false};
 
