@@ -40,7 +40,7 @@ const AdminLogin = () => {
     return (
         <div width="100%"  >
             <Box ml="5%">
-                <Flex gap="15%">
+                <Flex gap="15%" ml="5%">
                     <Box width="40%" height="auto" textAlign="center">
                         <Text fontWeight="bold" color="#0078db">NAUKRI HIRING SUITE FOR EMPLOYERS</Text>
                         <Text fontWeight="bold" color="#414b5d" fontSize="28px">From Campus to Senior Level Hiring</Text>
@@ -58,10 +58,10 @@ const AdminLogin = () => {
                             Know more
                         </Button>
 
-                        <Image width="50%" src="https://static.naukimg.com/s/5/114/i/loginFormImage.png" alt="icon" />
+                        <Image width="80%" ml="5%" src="https://static.naukimg.com/s/5/114/i/loginFormImage.png" alt="icon" />
                     </Box>
 
-                    <div width="30%" height="auto">
+                    <div width="30%" height="auto" ml="5%">
 
                         <Box >
                             <FormControl >
@@ -92,7 +92,7 @@ const AdminLogin = () => {
                     </div>
                 </Flex>
 
-                <Box textAlign="center">
+                <Box textAlign="center" mt ="5%">
                     <Text fontWeight="bold" color="#0078db">PRODUCTS & SERVICES</Text>
                     <Text fontWeight="bold" color="#414b5d" fontSize="28px">Naukri is India’s No.1 Job Posting & Recruitment Platform</Text>
                 </Box>
