@@ -183,20 +183,21 @@ const Signup = () => {
                 <br />
                 <SuggestionWrapper>
                   <label>Suggestions:</label>
-                  <div>
-                    <button>Kolkata</button>
-                    <button>Bangalore/Bengaluru</button>
-                    <button>Hyderabad/Secunderabad</button>
-                    <button>Mumbai</button>
-                    <button>Chennai</button>
-                    <button>New Delhi</button>
-                    <button>Pune</button>
+                  <div >
+                    <button className="place-button">Kolkata</button>
+                    <button className="place-button">Bangalore/Bengaluru</button>
+                    <button className="place-button">Hyderabad/Secunderabad</button>
+                    <button className="place-button">Mumbai</button>
+                    <button className="place-button">Chennai</button>
+                    <button className="place-button">New Delhi</button>
+                    <button className="place-button">Pune</button>
                   </div>
                 </SuggestionWrapper>
                 <ResumeSection>
                   <label>Resume</label>
                   <div className="resume-button">
-                    <button  >Upload Resume</button>
+                    
+                    <button className="upload-resume" >Upload Resume</button>
                     <p>Doc, Docx, PDF, RTF | Max:2MB</p>
                   </div>
                   <p className="Recruter">
@@ -205,14 +206,17 @@ const Signup = () => {
                   </p>
                 </ResumeSection>
                 <WhatsappWrapper>
-                  <input type="checkbox" onChange={(e)=>setUpdate(e.target.checked)}></input>
-                  <span>
+                  <input  className="whats-input" type="checkbox" onChange={(e)=>setUpdate(e.target.checked)}></input>
+                  <span  className="whats-span">
                     Send me important updates on
-                    <span>
-                      <img src="https://static.naukimg.com/s/7/104/assets/images/whatsappicon.0011d8c1.png"></img>
+                    <span  className="whats-span">
+                      <img className="whats-img" src="https://static.naukimg.com/s/7/104/assets/images/whatsappicon.0011d8c1.png"></img>
                     </span>
                   </span>
-                  <span>WhatsApp</span>
+                  <span  className="whats-span">WhatsApp</span>
+
+
+                  
                 </WhatsappWrapper>
                 <TermsWrapper>
                   <p>

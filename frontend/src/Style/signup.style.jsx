@@ -15,25 +15,28 @@ export const SignupWrapper = styled.div`
 `;
 
 export const HeadingWrapper = styled.div`
-  font-family: "Roboto Slab"-700;
+
   background-color: white;
   font-weight: 700;
-  font-size: 16px;
+ 
   margin-top: 55px;
   margin-bottom: 35px;
   h1 {
+    
+    font-size: 32px;
     background-color: white;
   }
 `;
 
 export const SubmitWrapper = styled.div`
   background-color: white;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  margin-top:8px;
   button {
     cursor: pointer;
-    padding: 15px 25px;
+    padding: 10px 20px;
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 500;
     border-radius: 25px;
     color: white;
     outline: none;
@@ -242,7 +245,7 @@ export const WorkStatusWrapper = styled.div`
     font-weight: 200;
   }
   h2 {
-    letter-spacing: 0.6px;
+    letter-spacing: 0.9px;
     color: rgb(69, 126, 255);
     font-size: 15px;
     margin-bottom: -5px;
@@ -260,7 +263,7 @@ export const SuggestionWrapper = styled.div`
   div {
     background-color: white;
   }
-  button {
+  .place-button{
     margin-top: 10px;
     padding: 5px 15px;
     border: 1px solid #d3e1ea;
@@ -268,7 +271,8 @@ export const SuggestionWrapper = styled.div`
     font-size: 13px;
     margin-right: 10px;
     background-color: white;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing:0.7px;
     color: gray;
   }
 `;
@@ -278,10 +282,10 @@ export const ResumeSection = styled.div`
   margin-bottom: 20px;
   background-color: white;
   .resume-button {
-    width: 320px;
+    width: 330px;
     background-color: white;
     border: 1px solid rgb(130, 146, 180);
-    font-weight: 300;
+    font-weight: 100;
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -289,7 +293,7 @@ export const ResumeSection = styled.div`
     p {
       margin-left: 8px;
       color: rgb(130, 146, 180);
-      font-size: 11px;
+      font-size: 12px;
       font-family: Inter;
       overflow-wrap: break-word;
     }
@@ -305,21 +309,25 @@ export const ResumeSection = styled.div`
     box-sizing: border-box;
     margin-top: 10px;
   }
-  button {
+  .upload-resume {
     cursor: pointer;
-    padding: 10px 15px;
+    padding:6px 10px;
+    font-weight:11px;
+    font-size:14px;
     border-radius: 20px;
     background-color: rgb(255, 117, 85);
     color: white;
     border: 1px solid rgb(255, 117, 85);
+    z-index: 999;
   }
   label {
-    margin-bottom: 7px;
+    margin-bottom: 5px;
   }
 `;
 
 export const WhatsappWrapper = styled.div`
   margin-top: 20px;
+
   width: 319px;
   margin-left: -10px;
   margin-bottom: 20px;
@@ -328,10 +336,10 @@ export const WhatsappWrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
 
-  input {
+  .whats-input {
     display: inline-block;
     margin: auto;
-
+    border:1px solid red;
     margin-right: 10px;
     width: 15px;
     height: 15px;
@@ -341,15 +349,18 @@ export const WhatsappWrapper = styled.div`
       background-color: blue;
     }
   }
-  img {
+ .whats-img{
     vertical-align: middle;
     font-size: 13px;
     width: 20px;
     height: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border:1px solid red;
   }
-  span {
+  .whats-span{
+  
+    border:1px solid red;
     color: rgb(68, 85, 120);
     font-family: Inter;
     font-weight: 400;
@@ -391,6 +402,6 @@ export const FooterWrapperSignup = styled.div`
   }
   #privacy {
     color: rgb(69, 126, 255);
-    margin-bottom: -6px;
+   
   }
 `;
