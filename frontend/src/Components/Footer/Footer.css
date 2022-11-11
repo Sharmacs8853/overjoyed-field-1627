@@ -1,0 +1,30 @@
+.footer-div{
+    height: 400px;
+    width: 100%;
+    border-top: 3px solid rgb(162, 219, 241);
+}
+.footer-inner-div{
+    width: 90%;
+    margin: auto;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.sub-footer-div{
+    height: 200px;
+    width: 90%;
+    margin: auto;
+    border-top: 1px solid rgb(238, 230, 230);
+    height: 30%;
+}
+.links-div{
+    display: flex;
+    flex-direction: column;
+}
+.link-text{
+    padding: 4px;
+    font-weight: 500;   
+}
+.link-text:hover{
+    color: rgb(15, 172, 234);
+}
