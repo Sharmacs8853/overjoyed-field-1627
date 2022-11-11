@@ -1,4 +1,5 @@
 
+import {useState,useEffect} from "react"
 import { Box } from '@chakra-ui/react';
 import Dreamjob from './Components/DreamJob/Dreamjob.jsx';
 import Featuredcompanies from './Components/Featuredcompanies/Featuredcompanies.jsx';
@@ -11,11 +12,18 @@ import PrepareInterview from './Components/PrepareInterview/PrepareInterview.jsx
 import TopCompany from './Components/TopCompany/TopCompany.jsx';
 import VideoFrofile from './Components/VideoProfile/VideoFrofile.jsx';
 import HomePage from './Pages/Home/HomePage';
+import Signup from './Pages/Signup/Signup.jsx';
+import Login from './Pages/Login/Login.jsx';
+
 
 function App() {
+
+
   return (
     <div>
+
      <Navbar />
+
       <AllRoutes/>
       <Dreamjob />
       <JobType/>
@@ -31,6 +39,7 @@ function App() {
       <Login /> */}
      
      
+
     </div>
   );
 }

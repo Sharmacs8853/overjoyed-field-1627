@@ -3,14 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import AdminDashboard from '../AdminDashboard/AdminDashboard';
 //import Login from '../Login/Login';
 // import Mainpage from '../MainPage/Mainpage';
-import Signup from '../Signup/Signup'
-import MainPage from '../MainPage/MainPage'
+
 
 const AllRoutes = () => {
   return (
     <Routes>
 
-        <Route path="/" element={<MainPage/>}></Route>
 
         {/* <Route path="/" element={<Mainpage />}></Route> */}
         {/* <Route path="/user/login" element={<Login />}></Route> */}
