@@ -96,7 +96,7 @@ const AdminLogin = () => {
                     <Text fontWeight="bold" color="#0078db">PRODUCTS & SERVICES</Text>
                     <Text fontWeight="bold" color="#414b5d" fontSize="28px">Naukri is India’s No.1 Job Posting & Recruitment Platform</Text>
                 </Box>
-                <Flex gap="5%">
+                <Flex gap="10%" ml="10%" >
                     <Box width="40%" mt="5%">
                         <Text fontWeight="bold" color="#414b5d" fontSize="22px">Naukri Job Posting Services - Get Quality Applies</Text>
                         <Text fontSize="xs">Reach out to millions of jobseekers and hire quickly with our fast and easy job posting services.</Text>
@@ -128,29 +128,30 @@ const AdminLogin = () => {
 
 
 
-                <Flex gap="5%">
+                <Flex >
 
                     <div>
                         <Image width="60%" src='https://static.naukimg.com/s/5/114/i/homePageResdex.png' alt='icon' />
                     </div>
 
-                    <Box width="40%" mt="5%">
+                    <Box mr="10%" mt="5%" >
                         <Text fontWeight="bold" color="#414b5d" fontSize="22px">Naukri Job Posting Services - Get Quality Applies</Text>
                         <Text fontSize="xs">Reach out to millions of jobseekers and hire quickly with our fast and easy job posting services.</Text>
-                        <Flex mt="5%" justifyContent="space-evenly">
+                        <Flex mt="5%" gap="15%">
                             <div>
                                 <Flex mt="5%" gap="5%">
                                     <Image width="15%" src='https://static.naukimg.com/s/5/114/i/icon_crore_candidates.png' alt='icon' />
-                                    <Box>Over 8.66 crore Jobseekers</Box></Flex>
+                                    <Text fontSize="14px">Over 8.66 crore Jobseekers</Text>
+                                </Flex>
                                 <Flex mt="5%" gap="5%"> <Image width="15%" src='https://static.naukimg.com/s/5/114/i/icon_contact_directly.png' alt='icon' />
-                                    <Box>Contact Directly</Box></Flex>
+                                    <Text fontSize="14px">Contact Directly</Text></Flex>
                             </div>
                             <div>
                                 <Flex mt="5%" gap="5%">
                                     <Image width="15%" src='https://static.naukimg.com/s/5/114/i/icon_Smart_talent_search.png' alt='icon' />
-                                    <Box>USmart Talent Search</Box></Flex>
+                                    <Text fontSize="14px">USmart Talent Search</Text></Flex>
                                 <Flex mt="5%" gap="5%"> <Image width="15%" src='https://static.naukimg.com/s/5/114/i/icon_verified_candidates.png' alt='icon' />
-                                    <Box>Verified Candidates</Box></Flex>
+                                    <Text fontSize="14px">Verified Candidates</Text></Flex>
                             </div>
 
                         </Flex>
@@ -160,7 +161,7 @@ const AdminLogin = () => {
                     </Box>
                 </Flex>
 
-                <Flex width="80%" height="auto" >
+                <Flex width="80%" height="auto" mt="10%" ml="10%" >
                     <Box >
                         <Flex gap='2%'><Text fontSize="18px" fontWeight="bold" color="#0078db">INTRODUCING THE PRODUCTIVITY ENHANCEMENT</Text><Image src='https://static.naukimg.com/s/7/0/assets/images/src/widgets/mnr-promo-banner-wdgt/v1/components/AppPromoBanner/assets/Frame.a95303d0.svg' alt='icon' /></Flex>
                         <Text fontWeight="bold" color="#414b5d" fontSize="28px">Naukri Recruiter App</Text>
@@ -191,9 +192,9 @@ const AdminLogin = () => {
 
                     </Box>
 
-                    <Image ml="10%" width='35%' src="https://static.naukimg.com/s/7/0/assets/images/src/widgets/mnr-promo-banner-wdgt/v1/components/AppPromoBanner/assets/promo-banner.a5c8b370.png" alt="icon" />
+                    <Image mt="-10%" ml="10%" width='35%' src="https://static.naukimg.com/s/7/0/assets/images/src/widgets/mnr-promo-banner-wdgt/v1/components/AppPromoBanner/assets/promo-banner.a5c8b370.png" alt="icon" />
                 </Flex>
-                <Flex width="80%" gap='10%' textAlign='center' mt="5%">
+                <Flex width="80%" gap='10%' textAlign='center' mt="5%"  ml="10%">
                     <Box>
                         <Image src='https://static.naukimg.com/s/5/114/i/blog_1.jpg' alt='ico' />
                         <Text fontWeight="bold" fontSize="18px">Get more responses from Jobseekers</Text>
