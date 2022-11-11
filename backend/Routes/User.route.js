@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken")
 userController.post("/signup", async (req, res) => {
   const { email, password ,name,mobile,work_status} = req.body;
   const existing_user = await userModel.findOne({ email });
-  console.log("existing_user  :"+existing_user)
+  // console.log("existing_user  :"+existing_user)
   if (existing_user) {
     res.send("user already exist")
     return;
@@ -52,11 +52,11 @@ userController.post("/login", async (req, res) => {
           res.send({"msg" : "Something went wrong, try again later"})
         }
         if(result){
-          const token = jwt.sign({user_id}, process.env.SECRET);  
+          const token = jwt.sign({user_id}, process.env.SECRET_KEY);
           res.send({message : "Login successfull", token})
         }
         else{
-          alert("login failed")
+         
           res.send({"msg" : "Login failed"})
         }
       });

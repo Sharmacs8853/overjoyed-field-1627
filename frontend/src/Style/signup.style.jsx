@@ -131,7 +131,7 @@ export const GoogleWrapper = styled.div`
     justify-content: center;
     align-items: center;
     border: 1px solid #d3e1ea;
-    margin-left: -30px;
+    margin-left: -26px;
     font-size: 12px;
     border-radius: 50%;
   }
@@ -327,9 +327,7 @@ export const ResumeSection = styled.div`
 
 export const WhatsappWrapper = styled.div`
   margin-top: 20px;
-
-  width: 319px;
-  margin-left: -10px;
+  width: 359px;
   margin-bottom: 20px;
   background-color: white;
   display: flex;
@@ -339,7 +337,7 @@ export const WhatsappWrapper = styled.div`
   .whats-input {
     display: inline-block;
     margin: auto;
-    border:1px solid red;
+    vertical-align: middle;
     margin-right: 10px;
     width: 15px;
     height: 15px;
@@ -354,19 +352,20 @@ export const WhatsappWrapper = styled.div`
     font-size: 13px;
     width: 20px;
     height: 20px;
-    margin-left: 15px;
-    margin-right: 15px;
-    border:1px solid red;
+    margin-left: 5px;
+    margin-right: 5px;
+
   }
   .whats-span{
-  
-    border:1px solid red;
+    display:flex;
+    align-items: center;
     color: rgb(68, 85, 120);
     font-family: Inter;
     font-weight: 400;
     font-size: 13px;
     line-height: 20px;
     cursor: pointer;
+
   }
 `;
 

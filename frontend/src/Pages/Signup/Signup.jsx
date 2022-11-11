@@ -22,11 +22,11 @@ import {
   MainSignup,
 } from "../../Style/signup.style";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { signup } from "../../Redux/AuthReducer/action";
+// import { useDispatch, useSelector } from "react-redux";
+// import { signup } from "../../Redux/AuthReducer/action";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 const Signup = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const [alrt, setAlrt] = useState("");
   const [name, setName] = useState("");
@@ -35,12 +35,12 @@ const Signup = () => {
   const [mobile,setMobile]=useState("");
   const [password, setPassword] = useState("");
   const [update,setUpdate]=useState(false)
-  const { isError, isLoading } = useSelector((state) => {
-    return {
-      isError: state.AuthReducer.isError,
-      isLoading: state.AuthReducer.isLoading,
-    };
-  });
+  // const { isError, isLoading } = useSelector((state) => {
+  //   return {
+  //     isError: state.AuthReducer.isError,
+  //     isLoading: state.AuthReducer.isLoading,
+  //   };
+  // });
 
   const handleSubmit = (e) => {
     const payload = {
@@ -53,18 +53,18 @@ const Signup = () => {
     console.log(payload)
 
     e.preventDefault();
-    if (name && email && mobile && password) {
-      dispatch(signup(payload))
-        .then((res) => {
-          let resp = res.payload.data.mesg;
-          setAlrt(resp);
-          alert(resp);
-          navigate("/login");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+    // if (name && email && mobile && password) {
+    //   dispatch(signup(payload))
+    //     .then((res) => {
+    //       let resp = res.payload.data.mesg;
+    //       setAlrt(resp);
+    //       alert(resp);
+    //       navigate("/login");
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // }
   };
 
   return (
@@ -206,17 +206,19 @@ const Signup = () => {
                   </p>
                 </ResumeSection>
                 <WhatsappWrapper>
+                  <div>
                   <input  className="whats-input" type="checkbox" onChange={(e)=>setUpdate(e.target.checked)}></input>
-                  <span  className="whats-span">
-                    Send me important updates on
-                    <span  className="whats-span">
+                  </div>
+                 
+                  <div className="whats-span">  
+                   <p>Send me important updates on</p> 
+                   <span  className="whats-span">
                       <img className="whats-img" src="https://static.naukimg.com/s/7/104/assets/images/whatsappicon.0011d8c1.png"></img>
                     </span>
-                  </span>
-                  <span  className="whats-span">WhatsApp</span>
+                    <span  className="whats-span">WhatsApp</span>
+                  </div>
+                 
 
-
-                  
                 </WhatsappWrapper>
                 <TermsWrapper>
                   <p>

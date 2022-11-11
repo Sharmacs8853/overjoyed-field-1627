@@ -9,7 +9,7 @@ import {
 
 import {SubmitWrapper} from "../../Style/signup.style"
 import { NavLink } from "../../Style/signup.style"
-import {login} from "../../Redux/AuthReducer/action"
+// import {login} from "../../Redux/AuthReducer/action"
 import { useDispatch,useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom"
 import {IoMdCheckmark} from "react-icons/io"
