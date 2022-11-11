@@ -14,7 +14,6 @@ const { adminModel } = require("./Models/Admin.model");
 const { adminController } = require("./Routes/Admin.route");
 const { userModel } = require("./Models/user.model");
 
-const cors= require("cors")
 
 app.use(cors())
 app.use(express.json());

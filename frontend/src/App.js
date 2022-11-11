@@ -25,18 +25,17 @@ function App() {
      <Navbar />
 
       <AllRoutes/>
-      <Dreamjob />
+      {/* <Dreamjob />
       <JobType/>
       <TopCompany/>
       <Featuredcompanies />
       <VideoFrofile/>
       <PrepareInterview />
-      <Growcareer />
+      <Growcareer /> */}
       
-      <Footer />
+      {/* <Footer /> */}
       {/* <HomePage /> */}
-      {/* <Signup />
-      <Login /> */}
+   
      
      
 

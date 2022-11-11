@@ -1,10 +1,11 @@
 
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+
 const authentication = (req,res,next)=>{
       console.log(req.headers.authorization)
       if(!req.headers.authorization){
-        res.send("submit the token first...")
+        res.send({"mesg":"submit the token first..."})
          return  
     }
 
@@ -16,7 +17,7 @@ const authentication = (req,res,next)=>{
         req.body.user_id = user_id
         next()
     }else{
-        res.send("YOU ARE NOT Logged in")
+        res.send({"mesg":"YOU ARE NOT Logged in"})
     }
     
  }

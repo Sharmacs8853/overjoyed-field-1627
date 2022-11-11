@@ -2,10 +2,12 @@
 import styled from "@emotion/styled";
 
 export const SmallLoginWrapper=styled.div`
-
+ 
+  width:97%;
 .small-login-main-div{
 
-    width:90%;
+    width:85%;
+    
     margin:auto;
 
 }

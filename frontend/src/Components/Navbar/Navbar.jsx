@@ -2,7 +2,7 @@ import { Box, Button, Flex, Img, Spacer,Text} from '@chakra-ui/react'
 import React from 'react'
 import { Link } from "react-router-dom";
 import './Navbar.css';
-
+import { NavLink } from "../../Style/signup.style"
 
 const Navbar = () => {
   return (
@@ -58,10 +58,10 @@ const Navbar = () => {
               <Box>
                 <Flex gap={'10px'}>
                   <Box>
-                    <Button colorScheme='linkedin' borderRadius={'20px'} px={"25px"} variant='outline' >Login</Button>
+                    <Button colorScheme='linkedin' borderRadius={'20px'} px={"25px"} variant='outline' ><Link to="/user/login">Login</Link></Button>
                   </Box>
                   <Box>
-                    <Button colorScheme='red' borderRadius={'20px'} px={"25px"}>Register</Button>
+                    <Button colorScheme='red' borderRadius={'20px'} px={"25px"}><Link to="/user/signup">Register</Link></Button>
                   </Box>
                   <Box>
                     <ul className='navbar-nav'>
