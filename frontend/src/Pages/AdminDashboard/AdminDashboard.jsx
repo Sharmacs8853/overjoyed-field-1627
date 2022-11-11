@@ -1,6 +1,7 @@
 import { Button } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import "./AdminDashboard.css"
+import InitialFocus from './JobUpdateModal'
 
 const AdminDashboard = () => {
       const [job ,setJobs] =useState([]);
@@ -70,7 +71,7 @@ const AdminDashboard = () => {
                       </div>
                       <div className='del_up'>
                       <div><Button colorScheme={"red"}>Delete</Button></div>
-                      <div><Button colorScheme={"green"}>Update</Button></div>
+                      <div><InitialFocus/></div>
                       </div>
                 </div>
             )) :""
