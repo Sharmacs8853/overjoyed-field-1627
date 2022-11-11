@@ -1,0 +1,21 @@
+.jobtype-div{
+    height: auto;
+    width: 100%;
+}
+.jobtype-inner-div{
+    height: 200px;
+    margin-top: 100px;
+    width: 100%;
+}
+.jobtype-inner-div2{
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+.job-cart{
+    border: 1px solid rgb(238, 233, 233);
+    border-radius: 10px 5px 10px 5px;
+}
+.job-cart:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
