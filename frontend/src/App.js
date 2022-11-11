@@ -24,9 +24,9 @@ function App() {
       <VideoFrofile/>
       <PrepareInterview />
       <Growcareer />
-      {/* <HomePage /> */}
-      {/* <Signup />
-      <Login /> */}
+       <HomePage /> 
+      <Signup />
+      <Login /> 
       <Footer />
     </div>
   );
