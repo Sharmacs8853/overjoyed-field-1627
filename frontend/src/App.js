@@ -24,13 +24,13 @@ function App() {
       <VideoFrofile/>
       <PrepareInterview />
       <Growcareer />
+      
+      <Footer />
       {/* <HomePage /> */}
       {/* <Signup />
       <Login /> */}
-      <Footer 
-      <HomePage />
-      <Signup />
-      <Login />
+     
+     
     </div>
   );
 }
