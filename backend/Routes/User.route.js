@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken")
 userController.post("/signup", async (req, res) => {
   const { email, password ,name,mobile,work_status} = req.body;
   const existing_user = await userModel.findOne({ email });
-  console.log("existing_user  :"+existing_user)
+
   if (existing_user) {
     res.send("user already exist")
     return;

@@ -12,6 +12,7 @@ const userModel = mongoose.model("user" , userSchema);
 
 module.exports={
     userModel
+
 }
 
 
@@ -24,3 +25,6 @@ module.exports={
 //     "work_status":"Working"
     
 //   }
+
+}
+
