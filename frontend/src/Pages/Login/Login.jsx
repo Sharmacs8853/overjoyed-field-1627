@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
 
   FormWrapper,
@@ -13,9 +13,9 @@ import { NavLink } from "../../Style/signup.style"
 import { useDispatch,useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom"
 import {IoMdCheckmark} from "react-icons/io"
-
+import LoginSmall from "./LoginSmall";
 const Login = () => {
-  
+
   // const dispatch=useDispatch();
   // const [email,setEmail]=useState("")
   // const [password,setPassword]=useState("")
@@ -61,15 +61,25 @@ const Login = () => {
   //       console.log(err)
   //      })
   //   }
-  // }
 
+  // }
+  const [size,setWindowSize]=useState(window.innerWidth)
+  React.useEffect(() => {
+    function handleResize() {
+     setWindowSize(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+  })
+
+
+ 
   return (
 
 
     // isLoading ?<img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img>  :
     
     
-    <LoginWrapper>
+    size<1300 ? <LoginSmall/> : <LoginWrapper>
   
       {/* <HeadingWrapper>
         <h1>Sign In</h1>

@@ -1,5 +1,5 @@
 
-
+import {useState,useEffect} from "react"
 import { Box } from '@chakra-ui/react';
 import Dreamjob from './Components/DreamJob/Dreamjob.jsx';
 import Featuredcompanies from './Components/Featuredcompanies/Featuredcompanies.jsx';
@@ -14,8 +14,11 @@ import VideoFrofile from './Components/VideoProfile/VideoFrofile.jsx';
 import HomePage from './Pages/Home/HomePage';
 import Signup from './Pages/Signup/Signup.jsx';
 import Login from './Pages/Login/Login.jsx';
+import LoginSmall from './Pages/Login/LoginSmall.jsx';
 
 function App() {
+
+
   return (
     <div>
 
@@ -27,12 +30,13 @@ function App() {
       {/* <Featuredcompanies /> */}
       {/* <VideoFrofile/> */}
       {/* <PrepareInterview /> */}
-     /
+   
       {/* <HomePage /> */}
       {/* <Signup />
       <Login /> */}
-      <Signup/>
-      {/* <Login/> */}
+      {/* <Signup/> */}
+      <Login/>
+     
   
     </div>
   );
