@@ -17,13 +17,13 @@ function App() {
     <div>
      <Navbar />
       <AllRoutes/>
-      <Dreamjob />
+     { /*<Dreamjob />
       <JobType/>
       <TopCompany/>
       <Featuredcompanies />
       <VideoFrofile/>
       <PrepareInterview />
-      <Growcareer />
+  <Growcareer />*/}
       
       <Footer />
       {/* <HomePage /> */}
