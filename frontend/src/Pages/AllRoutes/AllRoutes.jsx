@@ -1,11 +1,11 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import Mainpage from '../MainPage/mainpage';
+import AdminLogin from '../AdminLogin/AdminLogin';
 
 const AllRoutes = () => {
   return (
     <Routes>
-        <Route path="/" element={<Mainpage />}></Route>
+      <Route path='/adminlogin' element={<AdminLogin />}></Route>
     </Routes>
   )
 }
