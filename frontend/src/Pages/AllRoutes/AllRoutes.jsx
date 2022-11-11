@@ -1,15 +1,11 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import Login from '../Login/Login';
-// import Mainpage from '../MainPage/Mainpage';
-import Signup from "../Signup/Signup";
+import Mainpage from '../MainPage/mainpage';
 
 const AllRoutes = () => {
   return (
     <Routes>
-        {/* <Route path="/" element={<Mainpage />}></Route> */}
-        <Route path="/user/login" element={<Login />}></Route>
-        <Route path="/user/Signup" element={<Signup/>}></Route>
+        <Route path="/" element={<Mainpage />}></Route>
     </Routes>
   )
 }

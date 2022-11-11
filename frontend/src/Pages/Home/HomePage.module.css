@@ -1,24 +1,24 @@
 /* BOX styling */
 
 .mainPage{
+    border: 2px solid;
+    height: 1300px;
     background-color: #eeeeee;
     font-family: 'Roboto' , sans-serif;
-    height: 1800px;
-    border: 2px solid;
 }
 
 .TopPart{
-    height: 220px; 
+    height: 200px; 
     text-align: left;
     background-image: url("https://static.naukimg.com/s/5/105/i/dashboardbg.png");
-    padding: 38px 0px 0px 170px;
+    padding: 35px 0px 0px 170px;
 }
 .searchBarspace{
     display: flex;
 }
 /* Main part of the page starts here */
 .BottomPart{
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
     display: flex;
     width: 90%;
     margin: auto;
@@ -31,9 +31,9 @@
 }
 
 .pagePart1{
+    /* border: 2px solid greenyellow; */
     width: 60%;
     text-align: start;
-    height: auto;
 }
 
 .pagePart2{
@@ -68,4 +68,131 @@
     color: #ffffff;
     background: #4a90e2;
     cursor: pointer;
+}
+
+/* Main part of the page and its heading */
+.firstBox{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #ffffff;
+    width: 85%;
+    margin: auto;
+    text-align: start;
+    border-radius: 3px;
+    padding: 5px 0px 0px 30px
+  }
+.firstHead{
+    font-size: 15px;
+    line-height: 19.2px;
+    font-weight: 700;
+}
+
+.headingBox{
+   display: flex;
+   justify-content: space-between;
+}
+
+.poll{
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #FF6360;
+    border: 1px solid #FFF2F1;
+    background-color: #FFF2F1;
+    padding-top: 3px;
+}
+.firstGrid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.divInGrid{
+    height: 50px;
+}
+.gridHead{
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #363636;
+}
+.slider{
+    height: 8px;
+    border-radius: 15px;
+    background-color: #d0e4ff;
+    width: 80.2%;
+    margin-top: -3px;
+}
+.slider2{
+    height: 8px;
+    border-radius: 15px;
+    background-color: #d0e4ff;
+    width: 50.2%;
+    margin-top: -3px;
+}
+.slider3{
+    height: 8px;
+    border-radius: 15px;
+    background-color: #d0e4ff;
+    width: 60.2%;
+    margin-top: -3px;
+}
+.slider5{
+    height: 8px;
+    border-radius: 15px;
+    background-color: #d0e4ff;
+    width: 20.2%;
+    margin-top: -3px;
+}
+.lastBoxInfirst{
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+}
+.lastPoll{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    color: #969696;
+}
+
+
+/* Second box of Job */
+
+
+.secHead{
+    color: #666;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.secSubHead{
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    padding-bottom: 7px;
+}
+.divider{
+    width: 98%;
+   border: 0.1px solid  #eeeeee
+}
+.secFirstBox{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #ffffff;
+    width: 85%;
+    margin: auto;
+    text-align: start;
+    padding: 5px 0px 0px 30px;
+    margin-top: -14px;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+.secSubSubHead{
+    font-weight: 500;
+    font-size: 1rem;
+    color: #333;
+}
+.jobd{
+    font-size: 13px;
+    color: #666;
 }
