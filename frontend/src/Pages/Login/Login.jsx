@@ -23,6 +23,7 @@ const Login = () => {
   const [size,setWindowSize]=useState(window.innerWidth)
 
 
+
   // const {isError,isLoading}=useSelector((state)=>{return {isError:state.AuthReducer.isError,isLoading:state.AuthReducer.isLoading}})
 
 
@@ -30,37 +31,36 @@ const Login = () => {
   const handleSubmit=(e)=>{
     e.preventDefault();
     if(email && password){
+      
       const payload={
         email:email,
         password:password
        }
-        console.log(payload)
-       dispatch(login(payload)).then((res)=>{
-     
-       if(res.payload.token){
-        const user_token=res.payload.token;
-        const first_name=res.payload.name
-        const last_name=res.payload.title
-        const user_email=res.payload.email
-         
-
+        
+       dispatch( login(payload)).then((res)=>{
+      
+      console.log(res)
+        const user_token=res.payload.document.token;
+        const user_name=res.payload.document.name
+        const user_mobile=res.payload.document.mobile
+        const user_email=res.payload.document.email
+        const user_id=res.payload.document.id
+        
         const data={
-           name:first_name,
-           title:last_name,
+           name:user_name,
+           mobile:user_mobile,
            email:user_email,
-           token:user_token
+           token:user_token,
+           id:user_id
         }
-
+    
         localStorage.setItem("profile",JSON.stringify(data))
-        navigate("/")
+        // navigate("/")
+           alert(res.payload.msg)
        
-       }
-       else{
-        alert(res.payload.mesg)
-       }
-
        }).catch((err)=>{
         console.log(err)
+        
        })
     }
 
@@ -123,11 +123,11 @@ const Login = () => {
               <form onSubmit={handleSubmit}>
               <label className="form-label-right">Email ID/Username </label><br/>
               <input value={email} className="form-input-right" type="email" placeholder="Enter Email ID / Username" onChange={(e)=>setEmail(e.target.value)}></input>
-              <label className="form-label-right" id="label-hide1">Email ID/Username cannot be left blank</label>
+               {/* <label className="form-label-right" id="label-hide1">Email ID/Username cannot be left blank</label> */}
               <br/>
               <label className="form-label-right">Password</label><br/>
               <input value={password} className="form-input-right" type="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)} ></input>
-              <label id="label-hide2"  className="form-label-right">Password cannot be left blank</label>
+             {/* <label id="label-hide2"  className="form-label-right">Password cannot be left blank</label> */}
               <br/>
               <p className="forgot-pass">Forgot Password?</p>
               <button className="normal-login-right">Login</button><br/>

@@ -207,6 +207,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const WorkStatusWrapper = styled.div`
+  
   .work-status {
     background-color: white;
     height: 80px;
@@ -215,13 +216,16 @@ export const WorkStatusWrapper = styled.div`
     display: flex;
     margin-right: 15px;
     cursor: pointer;
+
   }
   .Ind-status {
+   
     display: flex;
     align-items: center;
     justify-content: space-around;
     background-color: white;
-    border: 1px solid #d3e1ea;
+   
+    border:1px solid #d3e1ea;
     width: 290px;
     margin-right: 12px;
     height: 100%;
@@ -229,14 +233,26 @@ export const WorkStatusWrapper = styled.div`
     border-bottom-right-radius: 20px;
     border-top-right-radius: 2px;
     border-bottom-left-radius: 2px;
-
+   
+  
     p {
       color: rgb(130, 146, 180);
+     
       font-size: 13px;
       font-weight: 400;
       margin-top: 6px;
     }
   }
+
+  /* #fresh{
+      border:${({fresher})=>(fresher?"1px solid rgb(69, 126, 255)":"1px solid #d3e1ea")};
+ 
+  
+    }
+    #exper{
+      border:${({fresher})=>(fresher?"1px solid rgb(69, 126, 255)":"1px solid #d3e1ea")};
+      
+    } */
   .Brief-icon {
     color: rgb(69, 126, 255);
     margin-left: 5px;

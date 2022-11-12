@@ -38,6 +38,8 @@ const Signup = () => {
   const [city,setCity]=useState("");
   const [password, setPassword] = useState("");
   const [update,setUpdate]=useState(false)
+  const [fresher,setFresher]=useState(false)
+  const [exp,setExp]=useState(false)
 
   // const { isError, isLoading } = useSelector((state) => {
   //   return {
@@ -60,14 +62,15 @@ const Signup = () => {
    
     if (name && email && mobile && password) {
       dispatch(signup(payload))
-        // .then((res) => {
-        //   let resp = res.payload.data.mesg;
-        //   alert(resp);
-        //   navigate("/user/login");
-        // })
-        // .catch((err) => {
-        //   console.log(err);
-        // });
+        .then((res) => {
+         
+          let resp = res.payload.msg;
+          alert(resp);
+          navigate("/user/login");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
 
@@ -216,10 +219,10 @@ const Signup = () => {
                   placeholder="Mobile Number"
                   onChange={(e) => setMobile(e.target.value)}
                 ></input>
-                <WorkStatusWrapper>
+                <WorkStatusWrapper fresher={fresher} >
                   <label>Work Status</label>
                   <div className="work-status">
-                    <div className="Ind-status">
+                    <div className="Ind-status" id="exper" onClick={()=>setFresher(fresher?false:true)} >
                       <div>
                         <VscBriefcase className="Brief-icon" />
                       </div>
@@ -229,7 +232,7 @@ const Signup = () => {
                       </div>
                     </div>
 
-                    <div className="Ind-status">
+                    <div className="Ind-status" id="fresh" onClick={()=>setFresher(fresher?false:true)}>
                       <div>
                         <GiSchoolBag className="Brief-icon" />
                       </div>
