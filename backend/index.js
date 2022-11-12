@@ -12,6 +12,7 @@ const jwt = require("jsonwebtoken")
 const { jobModel } = require("./Models/Job.model");
 // const { adminModel } = require("./Models/Admin.model");
 const { adminController } = require("./Routes/Admin.route");
+const { userModel } = require("./Models/user.model");
 // const { userModel } = require("./Models/user.model");
 
 
@@ -30,6 +31,11 @@ app.get("/job", async (req, res) => {
   const job = await jobModel.find()
   // console.log(job)
   res.send(job)
+})
+
+app.get("/registeredusers",async(req,res)=>{
+const registeredusers= await userModel.find()
+res.send(registeredusers)
 })
 
 // app.get("/job/companyname", async (req, res) => {

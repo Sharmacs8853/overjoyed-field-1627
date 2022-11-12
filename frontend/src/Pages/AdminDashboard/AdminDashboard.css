@@ -92,6 +92,8 @@
     border: 1px solid green;
     width: 30%;
     height: 95%;
+    /* margin: auto; */
+    padding: 0.5px;
 }
 
 .del_up{
@@ -103,4 +105,60 @@
     /* margin-top: 10px; */
     padding: 20px;
     justify-content: space-around;
+}
+
+
+/* ------user card---- */
+
+.userCard{
+    border: 1px solid red;
+    width: 98%;
+    /* height: 120px; */
+    display: flex;
+    justify-content: space-between;
+}
+.userCard>div{
+    border: 2px solid green;
+    height: 90%;
+    margin: auto;
+    padding: 10px;
+}
+.userCard>div:nth-child(1){
+    width: 70%;
+}
+.userCard>div:last-child{
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    /* align-self: center; */
+    align-items: center;
+    justify-content: center;
+}
+
+.userRight{
+    display: flex;
+    justify-content: space-between;
+
+}
+.userRight>div{
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* border: 1px solid blue; */
+}
+.userRight>div:nth-child(1){
+    width: 70%;
+}
+.userImage>img{
+    border: 2px solid grey;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+@media screen  and (max-width:900px) {
+ .admindashboard{
+    display: hidden;
+    background-color: black;
+    color: grey;
+ }
+    
 }
