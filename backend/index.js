@@ -32,6 +32,12 @@ app.get("/job", async (req, res) => {
   res.send(job)
 })
 
+// app.get("/job/companyname", async (req, res) => {
+//   const job = await jobModel.find({company_name:"Accenture" })
+//   console.log(job)
+//   res.send(job)
+// })
+
 
 app.listen(process.env.PORT, async () => {
 
