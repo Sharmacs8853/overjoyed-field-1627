@@ -39,7 +39,7 @@ const Login = () => {
         
        dispatch( login(payload)).then((res)=>{
       
-      console.log(res)
+    
         const user_token=res.payload.document.token;
         const user_name=res.payload.document.name
         const user_mobile=res.payload.document.mobile
@@ -55,7 +55,7 @@ const Login = () => {
         }
     
         localStorage.setItem("profile",JSON.stringify(data))
-        // navigate("/")
+         navigate("/")
            alert(res.payload.msg)
        
        }).catch((err)=>{
