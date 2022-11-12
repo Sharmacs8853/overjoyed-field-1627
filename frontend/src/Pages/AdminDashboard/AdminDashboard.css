@@ -89,7 +89,7 @@
     justify-content: space-evenly;
 }
 .expsc>div{
-    /* border: 1px solid green; */
+    border: 1px solid green;
     width: 30%;
     height: 95%;
 }
