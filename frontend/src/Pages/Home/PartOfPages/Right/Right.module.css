@@ -1,0 +1,172 @@
+/* first box of profile is designing */
+.firstDiv{
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 20px 0 rgb(0 0 0 / 20%);
+    padding: 20px 19px 2px;
+    width: 100%;
+    max-width: 335px;
+    background-color: white;
+    text-align: start;
+}
+.avatharBox{
+    height: 67px;
+    width: 69px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: -50px;
+}
+
+.userName{
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Roboto',sans-serif;
+    margin-bottom: 30px;
+}
+.percentBox{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -10px;
+}
+.perHead{
+    font-size: 13px;
+    font-weight: 400;
+    color: #4a90e2;
+}
+.percent{
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a90e2;
+}
+.missing{
+    font-size: 15px;
+    font-weight: 500;
+    color: #666666;
+}
+.btn{
+    background-color: #4a90e2;
+    color: white;
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.newHead2{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+}
+.info{
+    color: #4a90e2;
+}
+.flex{
+    display: flex;
+    gap: 5px;
+}
+.flex2{
+    display: flex;
+    gap: 20px;
+}
+.flexdivBox{
+    margin-top: 10px;
+    height: 60px;
+    width: 50%;
+    padding: 5px;
+    background-color: #f9f8f8;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 20px 0 rgb(0 0 0 / 20%);
+}
+.firstLastBox{
+    background-color: #f5f5f5;
+    width: 335px;
+    margin-left: -17px;
+    height: 50px;
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+/* second box designning */
+
+.secMainDiv{
+    background-color: #ffff;
+    margin-top: 30px;
+    border-radius: 3px;
+    display: flex;
+    text-align: start;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.secMainDiv2{
+    background-color: #ffff;
+    margin-top: 30px;
+    text-align: start;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.des{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.subdes{
+    font-size: 13px;
+     color: #666666;
+     margin-top: 10px;
+}
+
+.secSubdiv{
+    height: 120px;
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+}
+
+.secSubdiv2{
+    height: 115px;
+    margin: auto;
+    width: 50%;
+}
+.qrCode{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.width{
+    width: 75%;
+    text-align: start;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.width2{
+    text-align: start;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.newHead3{
+    font-size: 14px;
+    line-height: 15px;
+    width: 95%;
+    font-weight: 500;
+    color: #666666;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.newHead4{
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 500;
+    color: #666666;
+    
+}
+.last{
+    text-align: end;
+    color: #4a90e2;
+    font-size: 14px;
+    width: 95%;
+}
