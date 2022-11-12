@@ -1,7 +1,7 @@
 .admindashboard{
 
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* height: 1000px; */
     display: flex;
 }
@@ -111,14 +111,16 @@
 /* ------user card---- */
 
 .userCard{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 98%;
     /* height: 120px; */
     display: flex;
     justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 12px;
 }
 .userCard>div{
-    border: 2px solid green;
+    /* border: 2px solid green; */
     height: 90%;
     margin: auto;
     padding: 10px;
@@ -149,14 +151,25 @@
     width: 70%;
 }
 .userImage>img{
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     width: 80px;
     height: 80px;
     border-radius: 50%;
 }
-@media screen  and (max-width:900px) {
- .admindashboard{
-    display: hidden;
+.block{
+    display: none;
+   
+}
+@media screen  and (max-width:800px) {
+ .block{
+    display: flex;
+    background-color: black;
+    color: red;
+    width: 100%;
+    height: 1200px;
+ }
+    .admindashboard{
+    display: none;
     background-color: black;
     color: grey;
  }

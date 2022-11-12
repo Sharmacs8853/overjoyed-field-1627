@@ -20,6 +20,7 @@ const AdminDashboard = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
+        setUsers(null);
         setJobs(res);
       });
   };
@@ -36,12 +37,17 @@ const AdminDashboard = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
+        setJobs(null)
         setUsers(res);
-        job = null;
+        
       });
   };
 
   return (
+    <>
+    <div className="block">
+    This page is not available for small screen size
+    </div>
     <div className="admindashboard">
       <div className="adminsidebar">
         <div>
@@ -136,6 +142,7 @@ const AdminDashboard = () => {
           : ""}
       </div>
     </div>
+    </>
   );
 };
 
