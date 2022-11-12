@@ -14,7 +14,7 @@
  
  - Jitendra
  - Abirami-Fw18_0330 - [[LinkedIn Profile](https://www.linkedin.com/in/abirami-rajasekar-1a2bb215b/)]
- -
+ - Harsha C-fw16_077 - [[LinkedIn Profile](https://www.linkedin.com/in/harsha-c-053b31233/)]
  -
  -
  
