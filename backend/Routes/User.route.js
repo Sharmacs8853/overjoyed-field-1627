@@ -43,6 +43,7 @@ userController.post("/login", async (req, res) => {
     const hashed_password = user.password;
 
     const user_id = user._id;
+  
     // console.log(user)
     // console.log(user_id)
     if(user){
@@ -52,11 +53,22 @@ userController.post("/login", async (req, res) => {
           res.send({"msg" : "Something went wrong, try again later"})
         }
         if(result){
+          console.log(user)
           const token = jwt.sign({user_id}, process.env.SECRET);  
-          res.send({"msg": "Login successfull", token:token,document:user})
+          const name=user.name;
+          const email=user.email;
+          const mobile=user.mobile;
+          const id=user._id
+           const document={
+            name:name,
+            email:email,
+            mobile:mobile,
+            id:id,
+            token:token
+           }
+          res.send({"msg": "Login successfull",document:document})
         }
         else{
-          alert("login failed")
           res.send({"msg" : "Login failed"})
         }
       });

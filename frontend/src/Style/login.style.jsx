@@ -105,6 +105,7 @@ export const RightDivWrapper=styled.div`
        color:rgb(74,146,227);
        text-align: right;
        font-size:12px;
+       margin-top:20px;
        font-family:sans-serif;
       cursor:pointer;
 
