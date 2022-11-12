@@ -212,4 +212,14 @@ margin-top: 10px;
   width: 55%;
 }
 
-/* fifth box of recruters designing end here */
+
+@media only screen and (max-width: 1200px){
+    .btn{
+        background-color: #4a90e2;
+        color: white;
+        width: 150px;
+        height: 50px;
+        margin-top: 20px;
+        padding: 10px;
+    }
+}

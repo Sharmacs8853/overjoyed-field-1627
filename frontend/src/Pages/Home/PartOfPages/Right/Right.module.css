@@ -170,3 +170,26 @@
     font-size: 14px;
     width: 95%;
 }
+
+@media only screen and (max-width: 1200px){
+    .firstDiv{
+        box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 20px 0 rgb(0 0 0 / 20%);
+        padding: 20px 19px 2px;
+        width: 100%;
+        max-width: 1000px;
+        background-color: white;
+        text-align: start;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .firstDiv{
+        box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 10%), 0 2px 20px 0 rgb(0 0 0 / 20%);
+        padding: 20px 19px 2px;
+        width: 100%;
+        max-width: 400px;
+        margin-top: -70px;
+        background-color: white;
+        text-align: start;
+    }
+}

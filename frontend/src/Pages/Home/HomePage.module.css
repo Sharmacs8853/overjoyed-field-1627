@@ -69,3 +69,55 @@
     background: #4a90e2;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 1200px){
+    .mainPage{
+        height: 2700px;
+        font-family: 'Roboto' , sans-serif;
+    }
+    .pagePart2{
+        width: 100%;
+        margin-top: 5px;
+    }
+    .TopPart{
+        height: 250px; 
+        text-align: left;
+        background-image: url("https://static.naukimg.com/s/5/105/i/dashboardbg.png");
+        padding: 40px 0px 0px 100px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .mainPage{
+        font-family: 'Roboto' , sans-serif;
+        height: 3800px;
+    }
+    .BottomPart{
+        display: flex;
+        width: 100%;
+        margin: auto;
+        height: 80%;
+        gap: 30px;
+        margin-top: 40px;
+        justify-content: center;
+        padding-top: 20px;
+        flex-direction: column-reverse;
+    }
+
+    .pagePart1{
+        width: 100%;
+        text-align: start;
+    }
+    
+    .pagePart2{
+        width: 100%;
+        margin-top: 520px;
+    }
+
+    .TopPart{
+        height: 250px; 
+        text-align: left;
+        background-image: url("https://static.naukimg.com/s/5/105/i/dashboardbg.png");
+        padding: 40px 8px 0px 15px;
+    }
+  }
