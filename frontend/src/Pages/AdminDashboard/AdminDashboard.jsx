@@ -2,6 +2,7 @@ import { Button } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import "./AdminDashboard.css"
 import InitialFocus from './JobUpdateModal'
+import { BiBriefcase } from "react-icons/bi";
 
 const AdminDashboard = () => {
       const [job ,setJobs] =useState([]);
@@ -53,7 +54,7 @@ const AdminDashboard = () => {
                         color:"#404040"
                       }}>{item.company_name}</p>
                       <div className='expsc'>
-                      <div></div>
+                      <div><BiBriefcase/></div>
                       <div></div>
                       <div>{item.city[0]}</div>
                       </div>
