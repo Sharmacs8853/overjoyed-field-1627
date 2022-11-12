@@ -1,16 +1,16 @@
 .admindashboard{
 
     width: 100%;
-    border: 1px solid red;
-    height: 1000px;
+    border: 1px solid black;
+    /* height: 1000px; */
     display: flex;
 }
 
 .adminsidebar{
 
     width: 20%;
-    border: 1px solid blue;
-    height: 800px;
+    border-right: 2px solid grey;
+    /* height: 800px; */
     /* display: grid; */
     /* gap: 20px; */
 }
@@ -25,7 +25,82 @@
 .admindata{
 
     width: 80%;
-    border: 2px solid green;
-    height: 800px;
+    /* border: 2px solid green; */
+    /* height: 800px; */
     display: grid;
+    gap: 20px;
+    margin-left: 20px;
+}
+.P_jobcard{
+    /* border: 1px solid brown; */
+    margin-top: 10px;
+    width: 80%;
+    height: 220px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.jobcard{
+    /* border: 2px solid grey; */
+    width: 65%;
+    height: 200px;
+    display: grid;
+    
+}
+.R_jobcard{
+    /* border: 1px solid blue; */
+    width: 18%;
+    height: 200px;
+    padding: 20px;
+
+}.R_jobcard>img{
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    margin-top: 20px;
+
+
+}
+.job_des{
+    font-size:12px;
+    width: 25rem;
+    height:15px;
+    /* border: 1px solid red; */
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+
+}
+.jobcard>div,.jobcard>h2,.jobcard p{
+    /* border: 1px solid blue; */
+    height: 25px;
+    color: #606060;
+    width: 95%;
+    overflow: hidden;
+    padding-left: 5px;
+}
+.expsc{
+    /* border: 1px solid blue; */
+    width: 80%;
+    height: 18px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.expsc>div{
+    /* border: 1px solid green; */
+    width: 30%;
+    height: 95%;
+}
+
+.del_up{
+    /* border: 1px solid blue; */
+    width: 15%;
+    height: 80%;
+    display: grid;
+    margin: auto;
+    /* margin-top: 10px; */
+    padding: 20px;
+    justify-content: space-around;
 }

@@ -7,12 +7,11 @@ const { authentication } = require(".//Middlewares/authentication");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
 
-const cors = require("cors");
-// const { default: mongoose } = require("mongoose");
+
 const { jobModel } = require("./Models/Job.model");
-const { adminModel } = require("./Models/Admin.model");
+// const { adminModel } = require("./Models/Admin.model");
 const { adminController } = require("./Routes/Admin.route");
-const { userModel } = require("./Models/user.model");
+// const { userModel } = require("./Models/user.model");
 
 
 app.use(cors())
