@@ -35,13 +35,7 @@ function App() {
      <Navbar />
 
       <AllRoutes/>
-      {/* <Dreamjob />
-      <JobType/>
-      <TopCompany/>
-      <Featuredcompanies />
-      <VideoFrofile/>
-      <PrepareInterview />
-      <Growcareer /> */}
+
       
       {/* <Footer /> */}
       {/* <HomePage /> */}

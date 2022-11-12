@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import axios from "axios";
+
 const URL=process.env.REACT_APP_MONGO_URL;
 
 
@@ -12,6 +13,7 @@ const signup=(payload)=>(dispatch)=>{
       console.log(res.data)
       dispatch({type:types.SIGNUP_SUCCESS,payload:res.data})
 
+
     }).catch((err)=>{
         dispatch({type:types.SIGNUP_FAILURE,payload:err})
     })
@@ -20,8 +22,7 @@ const signup=(payload)=>(dispatch)=>{
 
 const login=(payload)=>(dispatch)=>{
     dispatch({type:types.LOGIN_REQUEST});
-    return axios.post(process.env.MONGO_URL,payload).then((res)=>{
-        console.log(res.data)
+
        return  dispatch({type:types.LOGIN_SUCCESS,payload:res.data})
     }).catch((err)=>{
         dispatch({type:types.LOGIN_FAILURE})
