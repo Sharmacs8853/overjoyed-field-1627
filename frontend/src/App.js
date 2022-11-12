@@ -46,7 +46,7 @@ function App() {
       <AllRoutes/>
 
       
-      {/* <Footer /> */}
+      <Footer />
       {/* <HomePage /> */}
 
 >>>>>>> 328a0d59045cd2e6a493da791a716f28dc03c37f

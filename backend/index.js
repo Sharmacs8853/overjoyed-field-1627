@@ -1,6 +1,7 @@
 const express = require("express");
 const { userController } = require("./Routes/user.route");
 const app = express();
+const cors=require("cors")
 const { connection } = require(".//Config/db")
 require("dotenv").config();
 const { authentication } = require(".//Middlewares/authentication");
