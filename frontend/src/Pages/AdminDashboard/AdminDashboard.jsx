@@ -17,15 +17,10 @@ const AdminDashboard = () => {
                    }
 
         }).then((res)=>res.json())
-        .then(res=>{console.log(res)
+        .then(res=>{
         setJobs(res)}
         )
-
-
     }
-    console.log(job)
-
-
 
   return (
     <div

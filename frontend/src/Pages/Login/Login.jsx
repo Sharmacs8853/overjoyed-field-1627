@@ -30,7 +30,10 @@ const Login = () => {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    if(email && password){
+    if(!email || !password){
+      alert("Please fill email/password")
+    }
+    else if(email && password){
       
       const payload={
         email:email,
@@ -38,8 +41,8 @@ const Login = () => {
        }
         
        dispatch( login(payload)).then((res)=>{
-      
-    
+        alert(res.payload.msg)
+       if(res.payload.document.token){
         const user_token=res.payload.document.token;
         const user_name=res.payload.document.name
         const user_mobile=res.payload.document.mobile
@@ -53,10 +56,10 @@ const Login = () => {
            token:user_token,
            id:user_id
         }
-    
+       
         localStorage.setItem("profile",JSON.stringify(data))
          navigate("/home")
-          //  alert(res.payload.msg)
+       }
        
        }).catch((err)=>{
         console.log(err)
@@ -65,6 +68,8 @@ const Login = () => {
     }
 
   }
+
+  
  
   React.useEffect(() => {
     function handleResize() {
@@ -78,7 +83,7 @@ const Login = () => {
   return (
 
 
-    // isLoading ?<img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img>  :
+   
     
     
      size<1300 ?<LoginSmallWrapper>
@@ -93,7 +98,7 @@ const Login = () => {
        </form>   
             <button  className="small-signup-register">Login</button>
           </div>
-     </LoginSmallWrapper>:isLoading?<h1>Loading</h1>: <LoginWrapper>
+     </LoginSmallWrapper>:isLoading? <img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img>  : <LoginWrapper>
   
         <LeftDivWrapper>
           <div id="left-main-div">
