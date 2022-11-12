@@ -43,7 +43,7 @@ const Navbar = () => {
                       
                     </Link>
                     <ul className="dropdown-menu">
-                      <li><Link className="dropdown-item" to="/">Action</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">It Job</Link></li>
                       <li><Link className="dropdown-item" to="/">Another action</Link></li>
                       <li><Link className="dropdown-item" to="/">Something else here</Link></li>
                     </ul>
@@ -87,9 +87,9 @@ const Navbar = () => {
                           <Text fontSize={'md'} className='hover-border' fontWeight={'600'} color={'blackAlpha.800'}>For employers</Text>
                         </Link>
                         <ul className="dropdown-menu">
-                          <li><Link className="dropdown-item" to="/">Action</Link></li>
+                          <li><Link className="dropdown-item" to="/adminlogin">Admin Login</Link></li>
                           <li><Link className="dropdown-item" to="/">Another action</Link></li>
-                          <li><Link className="dropdown-item" to="/">Something else here</Link></li>
+                        
                         </ul>
                       </li>
                     </ul>

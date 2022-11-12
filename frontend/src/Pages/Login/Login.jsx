@@ -24,7 +24,7 @@ const Login = () => {
 
 
 
-  // const {isError,isLoading}=useSelector((state)=>{return {isError:state.AuthReducer.isError,isLoading:state.AuthReducer.isLoading}})
+  const {isError,isLoading}=useSelector((state)=>{return {isError:state.AuthReducer.isError,isLoading:state.AuthReducer.isLoading}})
 
 
 
@@ -55,8 +55,8 @@ const Login = () => {
         }
     
         localStorage.setItem("profile",JSON.stringify(data))
-         navigate("/")
-           alert(res.payload.msg)
+         navigate("/home")
+          //  alert(res.payload.msg)
        
        }).catch((err)=>{
         console.log(err)
@@ -93,7 +93,7 @@ const Login = () => {
        </form>   
             <button  className="small-signup-register">Login</button>
           </div>
-     </LoginSmallWrapper>:<LoginWrapper>
+     </LoginSmallWrapper>:isLoading?<h1>Loading</h1>: <LoginWrapper>
   
         <LeftDivWrapper>
           <div id="left-main-div">

@@ -29,7 +29,7 @@ const AdminDashboard = () => {
 
   return (
     <div
-    className='admindashboard'
+    className='admindashboard' 
     >
     <div className='adminsidebar'>
     <div>
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
     <Button colorScheme={"blue"}>users</Button>
     </div>
     </div>
-    <div className='admindata'>
+    <div className='admindata' style={{padding:"40px"}}>
          {
             job?job.map((item)=>(
                  
