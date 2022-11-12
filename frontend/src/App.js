@@ -37,7 +37,7 @@ function App() {
       <AllRoutes/>
 
       
-      {/* <Footer /> */}
+      <Footer />
       {/* <HomePage /> */}
 
     </div>

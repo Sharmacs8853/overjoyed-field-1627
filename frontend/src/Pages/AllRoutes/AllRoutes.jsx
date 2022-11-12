@@ -9,7 +9,7 @@ import Signup from '../Signup/Signup';
 
 
 // import Mainpage from '../MainPage/Mainpage';
-import Signup from "../Signup/Signup";
+
 import Mainpage from '../MainPage/MainPage';
 
 

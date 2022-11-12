@@ -87,60 +87,59 @@ const Signup = () => {
   return (
     // isLoading ?<img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img> :
    
-//    size<1300 ? <SmallLoginWrapper>
-//     <div className="small-login-main-div">
-//     <h2 className="small-login-heading">Register for free to apply jobs</h2>
-//     <p className="small-login-para">5 Lakh+ recruiters are looking for candidates on Naukri</p>
-//     <form className="small-signup-form">
-//       <label className="small-signup-label">Full Name</label><br/>
-//       <input className="small-signup-input" type="text" ></input><br/>
-//       <label className="small-signup-label">Email Address</label><br/>
-//       <input className="small-signup-input" type="email" ></input><br/>
-//       <label className="small-signup-label">Password</label><br/>
-//       <input className="small-signup-input" type="password" ></input><br/>
-//       <label className="small-signup-label">Mobile Number</label><br/>
-//       <input className="small-signup-input" type="password" ></input><br/>
-//       <label className="small-signup-label">Gender</label><br/>
-//       <select>
-//       <option value="">Select</option>
-//         <option value="male">Male</option>
-//         <option value="male">Female</option>
-//         <option value="male">Transgender</option>
-//       </select>
+   size<1300 ? <SmallLoginWrapper>
+    <div className="small-login-main-div">
+    <h2 className="small-login-heading">Register for free to apply jobs</h2>
+    <p className="small-login-para">5 Lakh+ recruiters are looking for candidates on Naukri</p>
+    <form className="small-signup-form">
+      <label className="small-signup-label">Full Name</label><br/>
+      <input className="small-signup-input" type="text" ></input><br/>
+      <label className="small-signup-label">Email Address</label><br/>
+      <input className="small-signup-input" type="email" ></input><br/>
+      <label className="small-signup-label">Password</label><br/>
+      <input className="small-signup-input" type="password" ></input><br/>
+      <label className="small-signup-label">Mobile Number</label><br/>
+      <input className="small-signup-input" type="password" ></input><br/>
+      <label className="small-signup-label">Gender</label><br/>
+      <select>
+      <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="male">Female</option>
+        <option value="male">Transgender</option>
+      </select>
      
    
       
-//     </form>
-//     <p className="dis">Companies hire candidates of all genders to celebrate diversity</p>
+    </form>
+    <p className="dis">Companies hire candidates of all genders to celebrate diversity</p>
   
    
  
-//  <WhatsappWrapperSmall>
+ <WhatsappWrapperSmall>
   
-//                   <div>
-//                   <input  className="whats-input" type="checkbox" onChange={(e)=>setUpdate(e.target.checked)}></input>
-//                   </div>
+                  <div>
+                  <input  className="whats-input" type="checkbox" onChange={(e)=>setUpdate(e.target.checked)}></input>
+                  </div>
                  
-//                   <div className="whats-span">  
-//                    <p>Send me important updates on</p> 
-//                    <span  className="whats-span">
-//                       <img className="whats-img" src="https://static.naukimg.com/s/7/104/assets/images/whatsappicon.0011d8c1.png"></img>
-//                     </span>
-//                     <span  className="whats-span">WhatsApp</span>
-//                   </div>
-//                 </WhatsappWrapperSmall>
-//                 <TermsWrapper>
-//                   <p>
-//                     By clicking Register, you agree to the
-//                     <span> Terms and Conditions</span> &{" "}
-//                     <span>Privacy Policy</span> of Naukri.com
-//                   </p>
-//                 </TermsWrapper>
-//                 <button  className="small-signup-register">Register</button>
+                  <div className="whats-span">  
+                   <p>Send me important updates on</p> 
+                   <span  className="whats-span">
+                      <img className="whats-img" src="https://static.naukimg.com/s/7/104/assets/images/whatsappicon.0011d8c1.png"></img>
+                    </span>
+                    <span  className="whats-span">WhatsApp</span>
+                  </div>
+                </WhatsappWrapperSmall>
+                <TermsWrapper>
+                  <p>
+                    By clicking Register, you agree to the
+                    <span> Terms and Conditions</span> &{" "}
+                    <span>Privacy Policy</span> of Naukri.com
+                  </p>
+                </TermsWrapper>
+                <button  className="small-signup-register">Register</button>
               
-//                 </div>
-// </SmallLoginWrapper> : 
-<MainSignup>
+                </div>
+</SmallLoginWrapper> : <MainSignup>
       <SignupWrapper>
         <SignupWrapperLeft>
           <img
