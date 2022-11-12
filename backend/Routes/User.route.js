@@ -8,9 +8,9 @@ const jwt = require("jsonwebtoken")
 userController.post("/signup", async (req, res) => {
   const { email, password ,name,mobile,work_status} = req.body;
   const existing_user = await userModel.findOne({ email });
-  console.log("existing_user  :"+existing_user)
+
   if (existing_user) {
-    res.send("user already exist")
+    res.send({"msg":"user already exist"})
     return;
   }
   bcrypt.hash(password, 4, async function (err, hash) {
@@ -27,7 +27,7 @@ userController.post("/signup", async (req, res) => {
       });
 
       await new_user.save();
-      res.send({msg:"signup succesfull.."});
+      res.send({"msg":"signup succesfull.."});
     }
   });
 });
@@ -43,6 +43,7 @@ userController.post("/login", async (req, res) => {
     const hashed_password = user.password;
 
     const user_id = user._id;
+  
     // console.log(user)
     // console.log(user_id)
     if(user){
@@ -52,16 +53,27 @@ userController.post("/login", async (req, res) => {
           res.send({"msg" : "Something went wrong, try again later"})
         }
         if(result){
+          console.log(user)
           const token = jwt.sign({user_id}, process.env.SECRET);  
-          res.send({message : "Login successfull", token})
+          const name=user.name;
+          const email=user.email;
+          const mobile=user.mobile;
+          const id=user._id
+           const document={
+            name:name,
+            email:email,
+            mobile:mobile,
+            id:id,
+            token:token
+           }
+          res.send({"msg": "Login successfull",document:document})
         }
         else{
-          alert("login failed")
           res.send({"msg" : "Login failed"})
         }
       });
     }else{
-      res.send({msg:"User not found ..please login with correct credentials.."})
+      res.send({"msg":"User not found ..please login with correct credentials.."})
     }
 })
 

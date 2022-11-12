@@ -1,0 +1,71 @@
+/* BOX styling */
+
+.mainPage{
+    border: 2px solid;
+    height: 2100px;
+    background-color: #eeeeee;
+    font-family: 'Roboto' , sans-serif;
+}
+
+.TopPart{
+    height: 250px; 
+    text-align: left;
+    background-image: url("https://static.naukimg.com/s/5/105/i/dashboardbg.png");
+    padding: 40px 0px 0px 170px;
+}
+.searchBarspace{
+    display: flex;
+}
+/* Main part of the page starts here */
+.BottomPart{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 80%;
+    gap: 30px;
+    margin-top: 20px;
+    justify-content: center;
+    background-color: #eeeeee;
+    padding-top: 20px;
+}
+
+.pagePart1{
+    /* border: 2px solid greenyellow; */
+    width: 60%;
+    text-align: start;
+}
+
+.pagePart2{
+    /* border: 2px solid green; */
+    width: 30%;
+    margin-top: -220px;
+}
+
+/* Input part */
+.search{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    letter-spacing: normal;
+    font-weight: 500;
+    text-align: start;
+    font-size: 20px;
+    line-height: 25.6px;
+    color: #ffffff;
+}
+.input{
+    color: #666666;
+    width: 500px;
+    height: 50px;
+    border-radius: 0%;
+    border: none;
+    outline: none;
+}
+.searchBtn{
+    height: 52px;
+    border-radius: 0%;
+    width: 100px;
+    border: none;
+    color: #ffffff;
+    background: #4a90e2;
+    cursor: pointer;
+}
