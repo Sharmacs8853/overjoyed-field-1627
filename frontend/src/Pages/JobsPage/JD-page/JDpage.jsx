@@ -1,45 +1,42 @@
-import React from 'react'
-import Styles from './JD.module.css'
-import { Divider } from '@chakra-ui/react'
-import {TfiBag,TfiWallet} from 'react-icons/tfi'
-import {CiLocationOn} from 'react-icons/ci'
-import {useNavigate} from 'react-router-dom'
-import {useDispatch, useSelector } from 'react-redux'
-import {useParams} from 'react-router-dom';
-import { useEffect } from 'react'
-import { getSingleJobDes } from '../../../Redux/AppReducer/action'
+import React, { useEffect } from "react";
+import Styles from "./JD.module.css";
+import { Divider } from "@chakra-ui/react";
+import { TfiBag, TfiWallet } from "react-icons/tfi";
+import { CiLocationOn } from "react-icons/ci";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 const JDpage = () => {
-  const User=JSON.parse(localStorage.getItem("profile")) || ""
-  const token=User.token
+  const User = JSON.parse(localStorage.getItem("profile")) || "";
+  const token = User.token;
   const navigate = useNavigate();
   const jobdes = useSelector((store)=>store.AppReducer.jobdes)
   const dispatch = useDispatch()
   const params = useParams()
 
-  const handleRegister=()=>{
-   navigate("/user/signup")
-  } 
+   const {id}= useParams()
+   console.log(id)
 
-  const handleLogin=()=>{
-    navigate("/user/login")
-  }
+   const description =(id)=>{ axios.get(`http://localhost:8001/job/${id}`)
+   .then(res=>{console.log(res.data)})
+   }
+useEffect(()=>{
+  description(id)
+},[id])
 
+  const handleRegister = () => {
+    navigate("/user/signup");
+  };
 
-  useEffect(()=>{
-    dispatch( getSingleJobDes(params.id))
-  },[dispatch,params.id])
-
-  useEffect(()=>{
-    if(params){
-      dispatch( getSingleJobDes(params.id))
-    }
-  },[params,dispatch,navigate])
+  const handleLogin = () => {
+    navigate("/user/login");
+  };
 
   return (
     <div>
-       { /* First box in JD PAGE its the toppest part start here*/}
-        <div className={Styles.topestPart}></div>
-        {/* First box in JD PAGE its the toppest part end here */}
+      {/* First box in JD PAGE its the toppest part start here*/}
+      <div className={Styles.topestPart}></div>
+      {/* First box in JD PAGE its the toppest part end here */}
+
 
         { /* First box in JD PAGE its the toppest part start here*/}
         <div>
@@ -92,10 +89,8 @@ const JDpage = () => {
                                 </div>
                           </div>
                     </div>
-                </div>
-        { /* First box in JD PAGE its the toppest part end here*/}
     </div>
-  )
-}
+  );
+};
 
-export default JDpage
+export default JDpage;

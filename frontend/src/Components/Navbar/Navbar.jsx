@@ -8,6 +8,7 @@ import {logout} from "../../Redux/AuthReducer/action"
 const Navbar = () => {
   const User=JSON.parse(localStorage.getItem("profile")) || ""
   const token=User.token
+  const adminToken=JSON.parse(localStorage.getItem("adminToken")) || ""
   const navigate=useNavigate()
   const dispatch=useDispatch()
   const {isLoading}=useSelector((state)=>{return{isLoading:state.AuthReducer.isLoading}})
@@ -18,7 +19,18 @@ const Navbar = () => {
       localStorage.setItem("profile",JSON.stringify(profile))
       navigate("/")
     }
-
+  
+    const handleAdminLogout=async()=>{
+        try{
+            const adminToken="";
+            await localStorage.setItem("adminToken",JSON.stringify(adminToken))
+            alert("Logout Successful")
+            navigate("/adminlogin")
+        }
+        catch(err){
+         console.log(err)
+        }
+    }
 
   
 
@@ -87,7 +99,7 @@ const Navbar = () => {
                           <Text fontSize={'md'} className='hover-border' fontWeight={'600'} color={'blackAlpha.800'}>For employers</Text>
                         </Link>
                         <ul className="dropdown-menu">
-                          <li><Link className="dropdown-item" to="/adminlogin">Admin Login</Link></li>
+                          <li>{adminToken?<Button bg="none" onClick={handleAdminLogout}>Logout</Button> : <Link className="dropdown-item" to="/adminlogin">Admin Login</Link>}</li>
                           <li><Link className="dropdown-item" to="/">Another action</Link></li>
                         
                         </ul>

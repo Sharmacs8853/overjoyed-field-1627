@@ -8,7 +8,7 @@ const {REACT_APP_MONGO_URL}=process.env
 
 
 const signup=(payload)=>(dispatch)=>{
- 
+ console.log("payload at action",payload)
     dispatch({type:types.SIGNUP_REQUEST});
     return  axios.post(`${REACT_APP_MONGO_URL}/user/signup`,payload).then((res)=>{
    
@@ -23,11 +23,12 @@ const signup=(payload)=>(dispatch)=>{
 
 const login=(payload)=>(dispatch)=>{
     dispatch({type:types.LOGIN_REQUEST});
-
     return axios.post(`${REACT_APP_MONGO_URL}/user/login`,payload).then((res)=>{
-       
+       console.log("res form action",res.data)
        return  dispatch({type:types.LOGIN_SUCCESS,payload:res.data})
     }).catch((err)=>{
+        console.log("err",err)
+        
         dispatch({type:types.LOGIN_FAILURE})
     })
 }

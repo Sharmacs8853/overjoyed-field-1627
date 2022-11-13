@@ -16,8 +16,10 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 
 const AdminLogin = () => {
+  const [isLoading,setIsLoading]=useState(false)
   const [formData, setFormData] = useState({});
   const nav = useNavigate();
+ 
   const handleChange = (e) => {
     const { value, name } = e.target;
 
@@ -29,23 +31,29 @@ const AdminLogin = () => {
 
   const handleLogin = async () => {
     try {
-      const { data } = await axios.post(
+      setIsLoading(true)
+      const data  = await axios.post(
         "http://localhost:8001/admin/login",
         formData
       );
-      console.log(data[0]);
-      nav("/admindashboard");
-    } catch (err) {
-      if (err.response.status === 401) {
-        alert("Invalid Credential");
-      }
+
+        const adminToken=data.data.token
+        
+        localStorage.setItem("adminToken",JSON.stringify(adminToken || ""))
+        setIsLoading(false)
+        nav("/admindashboard");
+        alert(data.data.message) 
+        setIsLoading(false)  
     
+    } catch (err) {
+      setIsLoading(false)
+       console.log(err)
     }
   };
 
   return (
-    <>
-      <div width="100%">
+    isLoading? <img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img> : <div>
+     <div width="100%">
         <Box ml="5%" mt="5%" mb="5%">
           <Flex gap="15%" ml="5%">
             <Box width="40%" height="auto" textAlign="center">
@@ -436,7 +444,7 @@ const AdminLogin = () => {
         </Box>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
