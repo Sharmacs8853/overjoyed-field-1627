@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Button, Flex, Grid, GridItem, Heading, Img, Text } from '@chakra-ui/react'
 import "./PrepareInterview.css"
+import { Link } from 'react-router-dom'
 
 const PrepareInterview = () => {
   return (
@@ -28,6 +29,7 @@ const PrepareInterview = () => {
                 <Grid templateColumns='repeat(2, 1fr)' gap={6}>
 
                   <GridItem className='grid-box' px={'15px'} py={'5px'}>
+                    <Link to='/user/jobs'>
                     <Flex gap={'5px'}>
                       <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/cognizant.png' /></Box>
                       <Box>
@@ -42,16 +44,18 @@ const PrepareInterview = () => {
                         </Flex>
                       </Box>
                     </Flex>
+                    </Link>
                   </GridItem>
 
                   <GridItem className='grid-box' px={'15px'} py={'5px'}>
+                  <Link to='/user/jobs'>
                     <Flex gap={'5px'}>
-                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/cognizant.png' /></Box>
+                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/accenture.png' /></Box>
                       <Box>
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
-                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Cognizant</Text>
+                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Accenture</Text>
                               <Text><i class="fa-solid fa-chevron-right"></i> </Text>
                             </Flex>
                           </Text>
@@ -59,16 +63,18 @@ const PrepareInterview = () => {
                         </Flex>
                       </Box>
                     </Flex>
+                    </Link>
                   </GridItem>
 
                   <GridItem className='grid-box' px={'15px'} py={'5px'}>
+                  <Link to='/user/jobs'>
                     <Flex gap={'5px'}>
-                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/cognizant.png' /></Box>
+                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/amazon.png' /></Box>
                       <Box>
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
-                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Cognizant</Text>
+                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Amazon</Text>
                               <Text><i class="fa-solid fa-chevron-right"></i> </Text>
                             </Flex>
                           </Text>
@@ -76,16 +82,18 @@ const PrepareInterview = () => {
                         </Flex>
                       </Box>
                     </Flex>
+                    </Link>
                   </GridItem>
 
                   <GridItem className='grid-box' px={'15px'} py={'5px'}>
+                  <Link to='/user/jobs'>
                     <Flex gap={'5px'}>
-                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/cognizant.png' /></Box>
+                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/flipkart.png' /></Box>
                       <Box>
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
-                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Cognizant</Text>
+                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Flipkart</Text>
                               <Text><i class="fa-solid fa-chevron-right"></i> </Text>
                             </Flex>
                           </Text>
@@ -93,16 +101,18 @@ const PrepareInterview = () => {
                         </Flex>
                       </Box>
                     </Flex>
+                    </Link>
                   </GridItem>
 
                   <GridItem className='grid-box' px={'15px'} py={'5px'}>
+                  <Link to='/user/jobs'>
                     <Flex gap={'5px'}>
-                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/cognizant.png' /></Box>
+                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/byjus.png' /></Box>
                       <Box>
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
-                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Cognizant</Text>
+                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Byjus</Text>
                               <Text><i class="fa-solid fa-chevron-right"></i> </Text>
                             </Flex>
                           </Text>
@@ -110,16 +120,18 @@ const PrepareInterview = () => {
                         </Flex>
                       </Box>
                     </Flex>
+                    </Link>
                   </GridItem>
 
                   <GridItem className='grid-box' px={'15px'} py={'5px'}>
+                  <Link to='/user/jobs'>
                     <Flex gap={'5px'}>
-                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/cognizant.png' /></Box>
+                      <Box><Img h={'40px'} w={'40px'} src='https://static.naukimg.com/s/0/0/i/ambitionbox-comp/tcs.png' /></Box>
                       <Box>
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
-                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Cognizant</Text>
+                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>TCS</Text>
                               <Text><i class="fa-solid fa-chevron-right"></i> </Text>
                             </Flex>
                           </Text>
@@ -127,6 +139,7 @@ const PrepareInterview = () => {
                         </Flex>
                       </Box>
                     </Flex>
+                    </Link>
                   </GridItem>
 
 
@@ -134,7 +147,7 @@ const PrepareInterview = () => {
               </Box>
               <Box>
                 <Box textAlign={'center'} my={'30px'}>
-                  <Button variant='outline' size={'lg'} colorScheme='linkedin' borderRadius={'20px'}>View All Companies</Button>
+                  <Button variant='outline' size={'lg'} colorScheme='linkedin' borderRadius={'20px'}><Link to='/user/jobs'>View All Companies</Link></Button>
                 </Box></Box>
             </Flex>
           </Box>
@@ -153,19 +166,19 @@ const PrepareInterview = () => {
               </Box>
 
               <Box borderBottom={'1px solid'} borderColor={'gray.300'} pb={'5px'}>
-                <Text fontSize={'sm'} color={'gray.500'}>Software Engineer (7.2K+ questions)</Text>
+                <Text fontSize={'sm'} color={'gray.500'}>Business Analyst (2.5K+ questions)</Text>
               </Box>
 
               <Box borderBottom={'1px solid'} borderColor={'gray.300'} pb={'5px'}>
-                <Text fontSize={'sm'} color={'gray.500'}>Software Engineer (7.2K+ questions)</Text>
+                <Text fontSize={'sm'} color={'gray.500'}>Consultant  (2.4K+ questions)</Text>
               </Box>
 
               <Box borderBottom={'1px solid'} borderColor={'gray.300'} pb={'5px'}>
-                <Text fontSize={'sm'} color={'gray.500'}>Software Engineer (7.2K+ questions)</Text>
+                <Text fontSize={'sm'} color={'gray.500'}>Financial Analyst (7.2K+ questions)</Text>
               </Box>
 
               <Box borderBottom={'1px solid'} borderColor={'gray.300'} pb={'5px'}>
-                <Text fontSize={'sm'} color={'gray.500'}>Software Engineer (7.2K+ questions)</Text>
+                <Text fontSize={'sm'} color={'gray.500'}>Sales & Marketing (5.2K+ questions)</Text>
               </Box>
               <Box>
                 <Box textAlign={'center'} my={'30px'}>
