@@ -9,12 +9,9 @@ const JDpage = () => {
   const User = JSON.parse(localStorage.getItem("profile")) || "";
   const token = User.token;
   const navigate = useNavigate();
-  const jobdes = useSelector((store)=>store.AppReducer.jobdes)
-  const dispatch = useDispatch()
   const params = useParams()
-
    const {id}= useParams()
-   console.log(id)
+
 
    const description =(id)=>{ axios.get(`http://localhost:8001/job/${id}`)
    .then(res=>{console.log(res.data)})
@@ -36,10 +33,8 @@ useEffect(()=>{
       {/* First box in JD PAGE its the toppest part start here*/}
       <div className={Styles.topestPart}></div>
       {/* First box in JD PAGE its the toppest part end here */}
-
-
         { /* First box in JD PAGE its the toppest part start here*/}
-        <div>
+          <div>
                     <div className={Styles.firstBox}>
                         <p className={Styles.secSubHead}>Freshers_Desktop Support Engineer_Bangalore/Hyderabad/Chennai</p>
                         <p className={Styles.jobd}>TeamLease 4.0 ⭐ (1841   Reviews)</p>
@@ -81,7 +76,7 @@ useEffect(()=>{
                         <div>
                                 <div className={Styles.flexBoxInSec}>
                                       <div  className={Styles.finalFlex}>
-                                        <p className={Styles.jobd}>Posted: {jobdes.post_date}  |  agoOpenings: 10  |  Job Applicants: 2546</p>
+                                        <p className={Styles.jobd}>Posted: 2 day ago  |  agoOpenings: 10  |  Job Applicants: 2546</p>
                                       </div>
                                 </div>
                                 <div>
@@ -90,6 +85,7 @@ useEffect(()=>{
                           </div>
                     </div>
     </div>
+  </div>  
   );
 };
 
