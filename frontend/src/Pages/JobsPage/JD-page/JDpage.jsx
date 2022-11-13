@@ -73,9 +73,9 @@ useEffect(()=>{
                                       </div>
                                       {token?<div  className={Styles.forthflexbox}>
                                        <button className={Styles.btn2}>Save</button>
-                                       <button className={Styles.btn1}>Apply</button>
+                                       <button className={Styles.btn1} onClick={handleRegister}>{apply?"Applyed":"Apply"}</button>
                                       </div>: <div  className={Styles.forthflexbox}>
-                                       <button className={Styles.btn2} onClick={handleRegister}>{apply?"Applyed":"Apply"}</button>
+                                       <button className={Styles.btn2} onClick={handleRegister}></button>
                                        <button className={Styles.btn1} onClick={handleLogin}>Login In</button>
                                       </div>}
                                 </div>
