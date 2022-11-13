@@ -2,14 +2,13 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors=require("cors")
-const { connection } = require(".//Config/db")
-
+const {connection}=require("./config/db")
 const { userController } = require("./Routes/user.route");
 const { jobModel } = require("./Models/Job.model");
 const { adminController } = require("./Routes/Admin.route");
 const { userModel } = require("./Models/user.model");
 
-const PORT=process.env.PORT || 8000
+const PORT=process.env.PORT || 8080
 
 app.use(cors())
 app.use(express.json());
@@ -56,11 +55,11 @@ app.listen(PORT, async () => {
   try {
     await connection
     console.log("database connected")
-    console.log("listening on " + PORT);
+
   } catch (err) {
     console.log("databse connecting failed")
     console.log(err);
   }
-
+  console.log("listening on " + PORT);
 });
 
