@@ -31,7 +31,7 @@
      <img src="" alt="Register"/>
    ## 🚀 Admin Register Page:-
      <img src="" alt="Register"/>
-   ## 🚀 Admin Dashboard Page:-
+   ## 🚀 Admin Dashboard Page  :-
       <img src="" alt="AdminDashboard"/>
   
- 
+ <h2 align="center" >Thank You for visiting our Project Repository.</h2>
