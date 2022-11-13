@@ -5,7 +5,10 @@ import {Slider,SliderTrack,SliderFilledTrack} from '@chakra-ui/react'
 import {VscInfo} from 'react-icons/vsc'
 const RightPart = () => {
 
-  const User=JSON.parse(localStorage.getItem("profile")) || ""
+  const User=JSON.parse(localStorage.getItem("profile"))|| ""
+  const user_email=User.email
+
+
   return (
     <div>
       {/* ProfilePart the first box*/}
@@ -13,7 +16,8 @@ const RightPart = () => {
                <div className={Styles.avatharBox}>
                     <Avatar src='https://bit.ly/broken-link' className={Styles.avathar} size='m'/>
                </div>
-               <div className={Styles.userName}>{User.name}</div>
+
+               <div className={Styles.userName}>{user_email}</div>
 
                {/* completed percent showing part */}
 

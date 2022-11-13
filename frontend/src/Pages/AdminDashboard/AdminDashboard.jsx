@@ -26,7 +26,7 @@ const AdminDashboard = () => {
       });
   };
 
-  // --------handle user------
+  // // --------handle user------
   const handleUsers = (job) => {
     return fetch("http://localhost:8001/registeredusers", {
       method: "GET",
@@ -41,7 +41,11 @@ const AdminDashboard = () => {
         setJobs(null)
         setUsers(res);
         
-      });
+
+        
+    }
+
+      ) 
   };
 
   // ----handle Delete--------
