@@ -29,7 +29,13 @@ const JobsPage = () => {
 
 
     const handleJobs = () => {
-        const payload = {};
+        let payload;
+        if(filter.length===0){
+             payload="/"
+        }else if(filter.length===1){
+
+             payload = `category=${filter}`;
+        }
         return fetch(`http://localhost:8001/job?${payload}`, {
             method: "GET",
             headers: {
@@ -38,16 +44,16 @@ const JobsPage = () => {
             }
         }).then((res) => res.json())
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setJobs(res)
             }
         )
     }
     useEffect(() => {
         handleJobs();
-    },[category]);
-    console.log("jobs", job)
-    console.log('category', category);
+    },[filter]);
+    // console.log("jobs", job)
+    // console.log('category', category);
 
 // -----------handle description-----------//
 
@@ -84,19 +90,31 @@ const JobsPage = () => {
                         </Box>
                         <Box>
                             <Flex gap={2}>
-                                <Box><input  checked={filter.includes("developer")} type='checkbox' value='developer' onChange={handleFilter} /></Box>
-                                <Box color={'gray.700'}><label >Software Engineer</label></Box>
+                                <Box><input  checked={filter.includes("Management")} type='checkbox' value='Management' onChange={handleFilter} /></Box>
+                                <Box color={'gray.700'}><label >Management</label></Box>
                             </Flex>
                         </Box>
-                        {/* <Box>
+                         <Box>
                             <Flex gap={2}>
-                                <Box><input type='checkbox' /></Box>
-                                <Box color={'gray.700'}><label >Hardware Engineer</label></Box>
+                                <Box><input type='checkbox'  checked={filter.includes("Healthcare")}
+                                value='Healthcare' 
+                                onChange={handleFilter}
+                                /></Box>
+                                <Box color={'gray.700'}><label >Healthcare</label></Box>
                             </Flex>
-                        </Box> */}
+                        </Box> 
+                        <Box>
+                        <Flex gap={2}>
+                            <Box><input type='checkbox'  checked={filter.includes("IT")}
+                            value='IT' 
+                            onChange={handleFilter}
+                            /></Box>
+                            <Box color={'gray.700'}><label >IT</label></Box>
+                        </Flex>
+                    </Box> 
                         <Box>
                             <Flex gap={2}>
-                                <Box><input checked={filter.includes("sales")} type='checkbox' value='sales' onChange={handleFilter} /></Box>
+                                <Box><input checked={filter.includes("Sales")} type='checkbox' value='Sales' onChange={handleFilter} /></Box>
                                 <Box color={'gray.700'}><label >Sales</label></Box>
                             </Flex>
                         </Box>
@@ -161,7 +179,7 @@ const JobsPage = () => {
                         job?job.map((item)=>(
                             
                             <Link to={`/jd/${item._id}`}>
-                            <Box border={'1px solid gray'} m={2} p={4}>
+                            <Box key={item._id} border={'1px solid gray'} m={2} p={4}>
                         <Flex flexDir={'column'} gap={1}>
                             <Box>
                             <Flex>
@@ -193,7 +211,7 @@ const JobsPage = () => {
 
                             <Box>
                                 <Flex>
-                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><Text fontSize={'xs'}><button>{item.post_date}</button></Text></Box>
+                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><Text fontSize={'xs'}><button>{item.post_date}. {item.category}</button></Text></Box>
                                     <Spacer />
                                     <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><button><Text>Save</Text></button></Box>
                                 </Flex>
