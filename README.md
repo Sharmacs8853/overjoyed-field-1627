@@ -20,8 +20,8 @@
  - Satyam Gupta - Fw17_0451 - [[LinkedIn Profile](https://www.linkedin.com/in/satyamgupta1516/)]
  - Ritesh Kumar-Fw19_0451 - [[LinkedIn Profile](https://www.linkedin.com/in/ritesh134340/)]
  
-  ## 🚀<h4>We Named As:- </h4> JOBKAR🎉
-  ## 🚀<h4>LOGO:- </h4> <img src="" alt="We_created"/>
+  ## <h4>We Named As:- </h4> JOBKAR🎉
+  ## <h4>LOGO:-</h4> <img src="" alt="We_created"/>
   
    ## 🚀 Landing Page:-
      <img src="" alt="Landing"/>
