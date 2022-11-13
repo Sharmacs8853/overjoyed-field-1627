@@ -14,10 +14,10 @@ const Footer = () => {
                             <Box mt={'30px'}>
                                 <Text color={'gray.500'}>Contact with us</Text>
                                 <Flex gap={'10px'} color={'gray.500'}>
-                                    <Box><i class="fa-brands fa-square-facebook"></i></Box>
-                                    <Box><i class="fa-brands fa-square-instagram"></i></Box>
-                                    <Box><i class="fa-brands fa-twitter"></i></Box>
-                                    <Box><i class="fa-brands fa-linkedin"></i></Box>
+                                    <Box><i className="fa-brands fa-square-facebook"></i></Box>
+                                    <Box><i className="fa-brands fa-square-instagram"></i></Box>
+                                    <Box><i className="fa-brands fa-twitter"></i></Box>
+                                    <Box><i className="fa-brands fa-linkedin"></i></Box>
                                 </Flex>
                             </Box>
                         </Box>

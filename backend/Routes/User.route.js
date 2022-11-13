@@ -40,13 +40,16 @@ userController.post("/login", async (req, res) => {
 
     const user = await userModel.findOne({email})
 // console.log("user"+user)
-    const hashed_password = user.password;
-
-    const user_id = user._id;
+  
   
     // console.log(user)
     // console.log(user_id)
     if(user){
+
+      const hashed_password = user.password;
+
+      const user_id = user._id;
+
 
       bcrypt.compare(password, hashed_password, function(err, result) {
         if(err){

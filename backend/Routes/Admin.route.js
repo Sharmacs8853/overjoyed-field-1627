@@ -33,19 +33,14 @@ adminController.post("/signup", async (req, res) => {
     });
 });
 
-// ---------->LOGIN<-----------
+
 
 adminController.post("/login", async (req, res) => {
     const { email, password } = req.body
-
     const admin = await adminModel.findOne({ email })
-
-    const hashed_password = admin.password;
-
-    const admin_id = admin._id;
-
     if (admin) {
-
+        const hashed_password = admin.password;
+        const admin_id = admin._id;
         bcrypt.compare(password, hashed_password, function (err, result) {
             if (err) {
                 res.send({ "msg": "Something went wrong, try again later" })
@@ -56,11 +51,11 @@ adminController.post("/login", async (req, res) => {
             }
             else {
                
-                res.send({ "msg": "Login failed" })
+                res.send({ message: "Login failed" })
             }
         });
     } else {
-        res.send({ msg: "only admin can access ..please login with correct credentials.." })
+        res.send({ message: "only admin can access ..please login with correct credentials.." })
     }
 })
 
