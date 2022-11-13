@@ -1,10 +1,51 @@
-import React from 'react'
-import { BsFilter, BsStarFill,BsFileEarmarkText, BsSave } from 'react-icons/bs'
+import React, { useEffect, useState } from 'react'
+import { BsFilter, BsStarFill, BsFileEarmarkText} from 'react-icons/bs'
 import { IoLocationOutline } from "react-icons/io5";
-import { Box, Flex, Heading, Input, Spacer, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading, Img, Spacer, Text } from '@chakra-ui/react'
 import styles from './JobsPage.module.css';
 
 const JobsPage = () => {
+    const [job ,setJobs] =useState([]);
+    const [category,setCategory] = useState(false);
+    const [city,setCity]=useState(false);
+    const [state,setState]=useState(false);
+
+    const [filter,setFilter]=useState([])
+
+   console.log(filter)
+
+      const handleFilter=(e)=>{
+        const newFilter=[...filter];
+        if(newFilter.includes(e.target.value)){
+           newFilter.splice(newFilter.indexOf(e.target.value),1)
+        }else{
+          newFilter.push(e.target.value)
+        }
+        setFilter(newFilter)
+      }
+
+
+
+    const handleJobs = () => {
+        const payload = {};
+        return fetch(`http://localhost:8001/job?${payload}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer"
+            }
+        }).then((res) => res.json())
+            .then(res => {
+                console.log(res)
+                setJobs(res)
+            }
+        )
+    }
+    useEffect(() => {
+        handleJobs();
+    },[category]);
+    console.log("jobs", job)
+    console.log('category', category);
     return (
         <Box className={styles.job_box}>
             <Flex gap={5}>
@@ -25,19 +66,19 @@ const JobsPage = () => {
                         </Box>
                         <Box>
                             <Flex gap={2}>
-                                <Box><input type='checkbox' /></Box>
+                                <Box><input  checked={filter.includes("developer")} type='checkbox' value='developer' onChange={handleFilter} /></Box>
                                 <Box color={'gray.700'}><label >Software Engineer</label></Box>
                             </Flex>
                         </Box>
-                        <Box>
+                        {/* <Box>
                             <Flex gap={2}>
                                 <Box><input type='checkbox' /></Box>
                                 <Box color={'gray.700'}><label >Hardware Engineer</label></Box>
                             </Flex>
-                        </Box>
+                        </Box> */}
                         <Box>
                             <Flex gap={2}>
-                                <Box><input type='checkbox' /></Box>
+                                <Box><input checked={filter.includes("sales")} type='checkbox' value='sales' onChange={handleFilter} /></Box>
                                 <Box color={'gray.700'}><label >Sales</label></Box>
                             </Flex>
                         </Box>
@@ -97,10 +138,61 @@ const JobsPage = () => {
 
                 {/* middle area */}
                 <Box width={'50%'}>
+
+                    {
+                        job?job.map((item)=>(
+                            <Box border={'1px solid gray'} m={2} p={4}>
+                        <Flex flexDir={'column'} gap={1}>
+                            <Box>
+                            <Flex>
+                                <Box> <Heading size={'sm'} mt={5}> {item.job_title}</Heading></Box>
+                                <Spacer/>
+                                <Box border={'1px solid gray'} p={2}><Img h={'50px'} w={'50px'} src='https://img.naukimg.com/logo_images/groups/v1/4587425.gif' alt='' /></Box>
+                            </Flex>
+                            </Box>
+                            <Box>
+                                <Flex color={'gray.500'} gap={1}>
+                                    <Box><Text>{item.company_name} &nbsp; 3.9 </Text></Box>
+                                    <Box><Text><BsStarFill /></Text></Box>
+
+                                </Flex>
+                            </Box>
+                            <Box>
+                                <Flex color={'gray.700'} gap={2}>
+                                    <Box><Text><IoLocationOutline /></Text></Box>
+                                    <Box><Text>{item.city[0]},{item.state[0]}</Text></Box>
+                                </Flex>
+                            </Box>
+                            <Box>
+                                <Flex color={'gray.700'} gap={2}>
+                                    <Box><Text><BsFileEarmarkText /></Text></Box>
+                                    <Box><Text>Knowledge of </Text></Box>
+                                    <Box h={'20px'} w={'300px'} overflow={'hidden'} textOverflow={'ellipsis'}><Text>{item.job_description}</Text></Box>
+                                </Flex>
+                            </Box>
+
+                            <Box>
+                                <Flex>
+                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><Text fontSize={'xs'}><button>JUST NOW</button></Text></Box>
+                                    <Spacer />
+                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><button><Text>Save</Text></button></Box>
+                                </Flex>
+                            </Box>
+                        </Flex>
+                    </Box>
+                        )):""
+                    }
+
+                   
+
                     <Box border={'1px solid gray'} m={2} p={4}>
                         <Flex flexDir={'column'} gap={1}>
                             <Box>
-                                <Heading size={'sm'}> Microsoft Dynamics CRM Architect</Heading>
+                            <Flex>
+                                <Box> <Heading size={'sm'} mt={5}> Microsoft Dynamics CRM Architect</Heading></Box>
+                                <Spacer/>
+                                <Box border={'1px solid gray'} p={2}><Img h={'50px'} w={'50px'} src='https://img.naukimg.com/logo_images/groups/v1/4587425.gif' alt='' /></Box>
+                            </Flex>
                             </Box>
                             <Box>
                                 <Flex color={'gray.500'} gap={1}>
@@ -110,13 +202,13 @@ const JobsPage = () => {
                                 </Flex>
                             </Box>
                             <Box>
-                                <Flex color={'gray.700'} gap={1}>
+                                <Flex color={'gray.700'} gap={2}>
                                     <Box><Text><IoLocationOutline /></Text></Box>
                                     <Box><Text>Hybrid - Kolkata, Hyderabad</Text></Box>
                                 </Flex>
                             </Box>
                             <Box>
-                                <Flex color={'gray.700'} gap={1}>
+                                <Flex color={'gray.700'} gap={2}>
                                     <Box><Text><BsFileEarmarkText /></Text></Box>
                                     <Box><Text>Knowledge of </Text></Box>
                                     <Box><Text> ASP.net developer must- plugin, WCF, SSRS</Text></Box>
@@ -126,80 +218,8 @@ const JobsPage = () => {
                             <Box>
                                 <Flex>
                                     <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><Text fontSize={'xs'}><button>JUST NOW</button></Text></Box>
-                                    <Spacer/>
-                                    <Box  m={1} px={3} backgroundColor={'blackAlpha.100'}><button><Text>Save</Text></button></Box>
-                                </Flex>
-                            </Box>
-                        </Flex>
-                    </Box>
-
-                    <Box border={'1px solid gray'} m={2} p={4}>
-                        <Flex flexDir={'column'} gap={1}>
-                            <Box>
-                                <Heading size={'sm'}> Microsoft Dynamics CRM Architect</Heading>
-                            </Box>
-                            <Box>
-                                <Flex color={'gray.500'} gap={1}>
-                                    <Box><Text>Capgemini &nbsp; 3.9 </Text></Box>
-                                    <Box><Text><BsStarFill /></Text></Box>
-
-                                </Flex>
-                            </Box>
-                            <Box>
-                                <Flex color={'gray.700'} gap={1}>
-                                    <Box><Text><IoLocationOutline /></Text></Box>
-                                    <Box><Text>Hybrid - Kolkata, Hyderabad</Text></Box>
-                                </Flex>
-                            </Box>
-                            <Box>
-                                <Flex color={'gray.700'} gap={1}>
-                                    <Box><Text><BsFileEarmarkText /></Text></Box>
-                                    <Box><Text>Knowledge of </Text></Box>
-                                    <Box><Text> ASP.net developer must- plugin, WCF, SSRS</Text></Box>
-                                </Flex>
-                            </Box>
-
-                            <Box>
-                                <Flex>
-                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><Text fontSize={'xs'}>JUST NOW</Text></Box>
-                                    <Spacer/>
-                                    <Box  m={1} px={3} backgroundColor={'blackAlpha.100'}><Text>Save</Text></Box>
-                                </Flex>
-                            </Box>
-                        </Flex>
-                    </Box>
-
-                    <Box border={'1px solid gray'} m={2} p={4}>
-                        <Flex flexDir={'column'} gap={1}>
-                            <Box>
-                                <Heading size={'sm'}> Microsoft Dynamics CRM Architect</Heading>
-                            </Box>
-                            <Box>
-                                <Flex color={'gray.500'} gap={1}>
-                                    <Box><Text>Capgemini &nbsp; 3.9 </Text></Box>
-                                    <Box><Text><BsStarFill /></Text></Box>
-
-                                </Flex>
-                            </Box>
-                            <Box>
-                                <Flex color={'gray.700'} gap={1}>
-                                    <Box><Text><IoLocationOutline /></Text></Box>
-                                    <Box><Text>Hybrid - Kolkata, Hyderabad</Text></Box>
-                                </Flex>
-                            </Box>
-                            <Box>
-                                <Flex color={'gray.700'} gap={1}>
-                                    <Box><Text><BsFileEarmarkText /></Text></Box>
-                                    <Box><Text>Knowledge of </Text></Box>
-                                    <Box><Text> ASP.net developer must- plugin, WCF, SSRS</Text></Box>
-                                </Flex>
-                            </Box>
-
-                            <Box>
-                                <Flex>
-                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><Text fontSize={'xs'}>JUST NOW</Text></Box>
-                                    <Spacer/>
-                                    <Box  m={1} px={3} backgroundColor={'blackAlpha.100'}><Text>Save</Text></Box>
+                                    <Spacer />
+                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><button><Text>Save</Text></button></Box>
                                 </Flex>
                             </Box>
                         </Flex>

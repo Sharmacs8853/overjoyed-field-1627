@@ -28,9 +28,33 @@ app.use("/user", userController);
 app.use("/admin", adminController)
 
 app.get("/job", async (req, res) => {
-  const job = await jobModel.find()
-  // console.log(job)
-  res.send(job)
+   
+   
+    let obj=req.query;
+    console.log(obj)
+    let size=Object.keys(obj).length;
+    try{
+      if(size>0){
+        const job = await jobModel.find(req.query)
+        res.send(job)
+      }
+      else if(size===0){
+        const job = await jobModel.find({})
+        res.send(job)
+      }
+    }
+    catch(err){
+      res.send({mesg:"Something went wrong"})
+    }
+   
+  
+
+
+
+
+
+
+  
 })
 
 app.get("/registeredusers",async(req,res)=>{

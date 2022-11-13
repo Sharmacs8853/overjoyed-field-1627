@@ -25,7 +25,7 @@ const AdminDashboard = () => {
       });
   };
 
-  // --------handle user------
+  // // --------handle user------
   const handleUsers = (job) => {
     return fetch("http://localhost:8001/registeredusers", {
       method: "GET",
@@ -40,8 +40,23 @@ const AdminDashboard = () => {
         setJobs(null)
         setUsers(res);
         
-      });
+
+        return fetch("http://localhost:8001/job",{
+                   method:"GET",
+                   headers:{
+                    "Content-Type": "application/json",
+                    "Authorization":"Bearer"
+                   }
+
+        }).then((res)=>res.json())
+        .then(res=>{
+        setJobs(res)}
+        )
+    }
+
+      ) 
   };
+
 
   return (
     <>

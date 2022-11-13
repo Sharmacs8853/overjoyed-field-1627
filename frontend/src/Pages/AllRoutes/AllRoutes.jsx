@@ -8,7 +8,9 @@ import Signup from "../Signup/Signup";
 import MainPage from "../MainPage/MainPage";
 import PrivateRoute from "../../Private/PrivateRoute";
 import JobsPage from "../JobsPage/JobsPage";
+import PrivateRouteAdmin from "../../Private/PrivateRouteAdmin";
 import JDpage from "../JobsPage/JD-page/JDpage";
+
 
 const AllRoutes = () => {
   return (
@@ -30,9 +32,9 @@ const AllRoutes = () => {
       <Route
         path="/admindashboard"
         element={
-          <PrivateRoute>
+          <PrivateRouteAdmin>
             <AdminDashboard />
-          </PrivateRoute>
+          </PrivateRouteAdmin>
         }
       ></Route>
     </Routes>
