@@ -21,26 +21,47 @@ app.use("/user", userController);
 app.use("/admin", adminController)
 
 app.get("/job", async (req, res) => {
-   
-   
-    let obj=req.query;
-    console.log(obj)
-    let size=Object.keys(obj).length;
-    try{
-      if(size>0){
-        const job = await jobModel.find(req.query)
-        res.send(job)
-      }
-      else if(size===0){
-        const job = await jobModel.find({})
-        res.send(job)
-      }
-    }
-    catch(err){
-      res.send({mesg:"Something went wrong"})
-    }
-   
+  console.log(req.query)
+  const query = req.query
   
+    const job = await jobModel.find(query)
+  
+  res.send(job)
+  // console.log(job)
+})
+
+app.get("/job/:id", async (req, res) => {
+  console.log(req.params.id)
+  const id = req.params.id
+  try{
+
+    const job = await jobModel.findOne({_id:id})
+  
+  res.send(job)
+  }
+  catch(err){
+    console.log(err)
+  }
+  // console.log(job)
+})
+
+
+
+
+
+app.delete("/resgisteredusers/:id" , async(req,res)=>{
+  const id= req.params.id ;
+  try{
+
+    await userModel.deleteOne({_id:id})
+  
+    // console.log(req.params)
+   res.send({msg:"User deleted successfully"}) 
+  }
+  catch(err){
+    console.log(err)
+  }
+
 })
 
 app.get("/registeredusers",async(req,res)=>{

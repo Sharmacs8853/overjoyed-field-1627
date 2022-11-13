@@ -3,12 +3,14 @@ import { BsFilter, BsStarFill, BsFileEarmarkText} from 'react-icons/bs'
 import { IoLocationOutline } from "react-icons/io5";
 import { Box, Flex, Heading, Img, Spacer, Text } from '@chakra-ui/react'
 import styles from './JobsPage.module.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const JobsPage = () => {
     const [job ,setJobs] =useState([]);
     const [category,setCategory] = useState(false);
     const [city,setCity]=useState(false);
     const [state,setState]=useState(false);
+    const navigation = useNavigate()
 
     const [filter,setFilter]=useState([])
 
@@ -46,6 +48,22 @@ const JobsPage = () => {
     },[category]);
     console.log("jobs", job)
     console.log('category', category);
+
+// -----------handle description-----------//
+
+// const handledecription=(item)=>{
+
+//     console.log(item)
+//     navigation(`/jd/${item._id}`)
+//     // <Link to=`/jd/${item._id}`> </Link>
+    
+
+
+// }
+
+
+
+
     return (
         <Box className={styles.job_box}>
             <Flex gap={5}>
@@ -141,13 +159,15 @@ const JobsPage = () => {
 
                     {
                         job?job.map((item)=>(
+                            
+                            <Link to={`/jd/${item._id}`}>
                             <Box border={'1px solid gray'} m={2} p={4}>
                         <Flex flexDir={'column'} gap={1}>
                             <Box>
                             <Flex>
                                 <Box> <Heading size={'sm'} mt={5}> {item.job_title}</Heading></Box>
                                 <Spacer/>
-                                <Box border={'1px solid gray'} p={2}><Img h={'50px'} w={'50px'} src='https://img.naukimg.com/logo_images/groups/v1/4587425.gif' alt='' /></Box>
+                                <Box border={'1px solid gray'} p={2}><Img h={'50px'} w={'50px'} src={item.url} alt='' /></Box>
                             </Flex>
                             </Box>
                             <Box>
@@ -173,13 +193,14 @@ const JobsPage = () => {
 
                             <Box>
                                 <Flex>
-                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><Text fontSize={'xs'}><button>JUST NOW</button></Text></Box>
+                                    <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><Text fontSize={'xs'}><button>{item.post_date}</button></Text></Box>
                                     <Spacer />
                                     <Box m={1} px={3} backgroundColor={'blackAlpha.100'}><button><Text>Save</Text></button></Box>
                                 </Flex>
                             </Box>
                         </Flex>
                     </Box>
+                    </Link>
                         )):""
                     }
 
