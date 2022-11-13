@@ -8,7 +8,7 @@ const {REACT_APP_MONGO_URL}=process.env
 
 
 const signup=(payload)=>(dispatch)=>{
- 
+ console.log("payload at action",payload)
     dispatch({type:types.SIGNUP_REQUEST});
     return  axios.post(`${REACT_APP_MONGO_URL}/user/signup`,payload).then((res)=>{
    

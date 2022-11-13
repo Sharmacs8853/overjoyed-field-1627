@@ -9,6 +9,8 @@ import MainPage from "../MainPage/MainPage";
 import PrivateRoute from "../../Private/PrivateRoute";
 import JobsPage from "../JobsPage/JobsPage";
 import PrivateRouteAdmin from "../../Private/PrivateRouteAdmin";
+import JDpage from "../JobsPage/JD-page/JDpage";
+
 
 const AllRoutes = () => {
   return (
@@ -26,6 +28,7 @@ const AllRoutes = () => {
       <Route path="/adminlogin" element={<AdminLogin />}></Route>
       <Route path="/user/signup" element={<Signup />}></Route>
       <Route path="/user/jobs" element={<JobsPage />}></Route>
+      <Route path="/jd" element={ <JDpage/> }/>
       <Route
         path="/admindashboard"
         element={
