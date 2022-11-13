@@ -33,7 +33,7 @@ adminController.post("/signup", async (req, res) => {
     });
 });
 
-// ---------->LOGIN<-----------
+
 
 adminController.post("/login", async (req, res) => {
     const { email, password } = req.body

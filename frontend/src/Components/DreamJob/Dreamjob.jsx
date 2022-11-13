@@ -12,7 +12,7 @@ const Dreamjob = () => {
                     <Box alignItems={'center'}>
                         <Flex gap={'10px'}>
                             <Box p={'3px'} color={'gray.500'}>
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i className="fa-solid fa-magnifying-glass"></i>
                             </Box>
                             <Box p={'3px'} borderLeft={'1px solid'} borderColor={'gray.300'}>
                                 <Input variant='unstyled' width={'300px'} px={'10px'} placeholder='Enter skills/ designations / Companies' type='text' />

@@ -15,7 +15,7 @@ const TopCompany = () => {
                             <Box className='job-cart' m={'10px'} p={'10px'}>
                                 <Flex gap={'5px'}>
                                     <Text color={'gray.800'} >MNCs </Text>
-                                    <Text color={'gray.500'}><i class="fa-solid fa-chevron-right"></i></Text>
+                                    <Text color={'gray.500'}><i className="fa-solid fa-chevron-right"></i></Text>
                                 </Flex>
                                 <Text color={'gray.500'}>1.3K+ are actively hiring</Text>
                                 <Box>
@@ -32,7 +32,7 @@ const TopCompany = () => {
                             <Box className='job-cart' m={'10px'} p={'10px'}>
                                 <Flex gap={'5px'}>
                                     <Text color={'gray.800'} >MNCs </Text>
-                                    <Text color={'gray.500'}><i class="fa-solid fa-chevron-right"></i></Text>
+                                    <Text color={'gray.500'}><i className="fa-solid fa-chevron-right"></i></Text>
                                 </Flex>
                                 <Text color={'gray.500'}>1.3K+ are actively hiring</Text>
                                 <Box>
