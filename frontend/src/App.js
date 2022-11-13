@@ -8,8 +8,8 @@ function App() {
   return (
     <div>
       <Navbar />
-      {/* <AllRoutes /> */}
-      <Footer/>
+      <AllRoutes /> 
+      
     </div>
   );
 }
