@@ -5,7 +5,7 @@ import { TfiBag, TfiWallet } from "react-icons/tfi";
 import { CiLocationOn } from "react-icons/ci";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+
 const JDpage = () => {
   const [jobs, setJobs] = useState('');
   const [apply, setApply] = useState(false);
@@ -15,15 +15,13 @@ const JDpage = () => {
   
   const { id } = useParams();
 
-  const description = (id) => {
-    axios.get(`http://localhost:8001/job/${id}`).then((res) => {
-      // console.log(res.data);
-      setJobdata(res.data)
+ 
 
 
    const description =(id)=>{ axios.get(`http://localhost:8001/job/${id}`)
    .then(res=>{setJobs(res.data)})
    }
+  
 useEffect(()=>{
   description(id)
 },[id])
@@ -36,11 +34,12 @@ useEffect(()=>{
   const handleLogin = () => {
     navigate("/user/login");
   };
-  console.log(jobdata)
+  
 
   console.log("jobs",jobs);
 
   return (
+    <div>
     <div>
       {/* First box in JD PAGE its the toppest part start here*/}
       <div className={Styles.topestPart}></div>
@@ -109,5 +108,5 @@ useEffect(()=>{
 
   );
 };
-
+  
 export default JDpage;
