@@ -45,7 +45,22 @@ app.get("/job/:id", async (req, res) => {
   // console.log(job)
 })
 
+app.delete("/job/:id",async(req,res)=>{
 
+  const id= req.params.id ;
+  try{
+
+    await jobModel.deleteOne({_id:id})
+  
+    // console.log(req.params)
+   res.send({msg:"Job deleted successfully"}) 
+  }
+  catch(err){
+    console.log(err)
+  }
+
+
+})
 
 
 

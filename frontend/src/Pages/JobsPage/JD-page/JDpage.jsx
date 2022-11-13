@@ -5,22 +5,27 @@ import { TfiBag, TfiWallet } from "react-icons/tfi";
 import { CiLocationOn } from "react-icons/ci";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+
 const JDpage = () => {
   const [jobs, setJobs] = useState('');
   const [apply, setApply] = useState(false);
   const User = JSON.parse(localStorage.getItem("profile")) || "";
   const token = User.token;
   const navigate = useNavigate();
-  const params = useParams()
-   const {id}= useParams()
+  
+  const { id } = useParams();
+
+ 
 
 
    const description =(id)=>{ axios.get(`http://localhost:8001/job/${id}`)
    .then(res=>{setJobs(res.data)})
    }
+  
 useEffect(()=>{
   description(id)
 },[id])
+
 
   const handleRegister = () => {
     setApply(true);
@@ -29,10 +34,12 @@ useEffect(()=>{
   const handleLogin = () => {
     navigate("/user/login");
   };
+  
 
   console.log("jobs",jobs);
 
   return (
+    <div>
     <div>
       {/* First box in JD PAGE its the toppest part start here*/}
       <div className={Styles.topestPart}></div>
@@ -77,23 +84,29 @@ useEffect(()=>{
                         <br />
                         <Divider style={{ marginBottom:"10px" }}/>
 
-                        <div>
-                                <div className={Styles.flexBoxInSec}>
-                                      <div  className={Styles.finalFlex}>
-                                        <p className={Styles.jobd}>Posted: 2 day ago  |  agoOpenings: 10  |  Job Applicants: 2546</p>
-                                      </div>
-                                </div>
-                                <div>
-                                     <p  className={Styles.forthBoxlast}>Send Me Jobs Like This</p>
-                                </div>
-                          </div>
-                    </div>
+
+          <div>
+            <div className={Styles.flexBoxInSec}>
+              <div className={Styles.finalFlex}>
+                <p className={Styles.jobd}>
+                  Posted: 2 day ago | agoOpenings: 10 | Job Applicants: 2546
+                </p>
+              </div>
+            </div>
+            <div>
+              <p className={Styles.forthBoxlast}>Send Me Jobs Like This</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div style={{margin:"100px"}}>
       <p>{jobs.job_description}</p>
     </div>
   </div>  
+
   );
 };
-
+  
 export default JDpage;

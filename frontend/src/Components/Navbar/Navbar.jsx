@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Img, Spacer,Text} from '@chakra-ui/react'
+ import { Box, Button, Flex, Img, Spacer,Text} from '@chakra-ui/react'
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import './Navbar.css';
@@ -100,7 +100,11 @@ const Navbar = () => {
                         </Link>
                         <ul className="dropdown-menu">
                           <li>{adminToken?<Button bg="none" onClick={handleAdminLogout}>Logout</Button> : <Link className="dropdown-item" to="/adminlogin">Admin Login</Link>}</li>
-                          <li><Link className="dropdown-item" to="/">Employers Login</Link></li>
+
+                          <li><Link className="dropdown-item" to="/admindashboard">Admin dashboard</Link></li>
+
+                          
+
                         
                         </ul>
                       </li>

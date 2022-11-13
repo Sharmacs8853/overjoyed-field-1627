@@ -1,7 +1,6 @@
 /* BOX styling */
 
 .mainPage{
-    border: 2px solid;
     height: 2100px;
     background-color: #eeeeee;
     font-family: 'Roboto' , sans-serif;
@@ -100,7 +99,7 @@
         gap: 30px;
         margin-top: 40px;
         justify-content: center;
-        padding-top: 20px;
+        /* padding-top: 20px; */
         flex-direction: column-reverse;
     }
 
@@ -111,7 +110,7 @@
     
     .pagePart2{
         width: 100%;
-        margin-top: 520px;
+        margin-top: -2px;
     }
 
     .TopPart{
@@ -119,5 +118,10 @@
         text-align: left;
         background-image: url("https://static.naukimg.com/s/5/105/i/dashboardbg.png");
         padding: 40px 8px 0px 15px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .pagePart2{
+        margin-top: -1px;
     }
   }
