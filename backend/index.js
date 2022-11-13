@@ -15,6 +15,7 @@ const { adminController } = require("./Routes/Admin.route");
 const { userModel } = require("./Models/user.model");
 // const { userModel } = require("./Models/user.model");
 
+const PORT=process.env.PORT || 8000
 
 app.use(cors())
 app.use(express.json());
@@ -22,7 +23,6 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("welcome to the jobkar app");
 });
-
 
 app.use("/user", userController);
 app.use("/admin", adminController)
@@ -48,13 +48,6 @@ app.get("/job", async (req, res) => {
     }
    
   
-
-
-
-
-
-
-  
 })
 
 app.get("/registeredusers",async(req,res)=>{
@@ -69,12 +62,12 @@ res.send(registeredusers)
 // })
 
 
-app.listen(process.env.PORT, async () => {
+app.listen(PORT, async () => {
 
   try {
     await connection
     console.log("database connected")
-    console.log("listening on " + process.env.PORT);
+    console.log("listening on " + PORT);
   } catch (err) {
     console.log("databse connecting failed")
     console.log(err);
