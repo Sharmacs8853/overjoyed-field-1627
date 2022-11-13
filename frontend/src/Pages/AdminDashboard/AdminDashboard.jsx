@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./AdminDashboard.css";
 import InitialFocus from "./JobUpdateModal";
 import { BiBriefcase, BiRupee } from "react-icons/bi";
+import axios from "axios";
 // import {  TbCurrencyRupee} from "react-icons/Tb";
 
 const AdminDashboard = () => {
@@ -36,12 +37,29 @@ const AdminDashboard = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setJobs(null)
         setUsers(res);
         
       });
   };
+
+  // ----handle Delete--------
+
+  const handleDelete= (id)=>{
+        
+    console.log(id)
+    axios.delete(`http://localhost:8001/resgisteredusers/${id}`)
+    .then(res=>{
+       
+      alert(res.data.msg)
+      handleUsers()
+      console.log("delete",res.data)
+      console.log("delete success")
+    })
+
+  }
+
 
   return (
     <>
@@ -135,7 +153,7 @@ const AdminDashboard = () => {
                   </div>
                 </div>
                 <div className="userLeft">
-                <Button colorScheme={"red"}>Delete user</Button>
+                <Button onClick={()=>handleDelete(user._id)} colorScheme={"red"}>Delete user</Button>
                 </div>
               </div>
             ))

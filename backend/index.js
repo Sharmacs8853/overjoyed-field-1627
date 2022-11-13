@@ -2,7 +2,7 @@ const express = require("express");
 const { userController } = require("./Routes/user.route");
 const app = express();
 const cors=require("cors")
-const { connection } = require(".//Config/db")
+const { connection } = require(".//config/db")
 require("dotenv").config();
 const { authentication } = require(".//Middlewares/authentication");
 const bcrypt = require("bcrypt");
@@ -28,9 +28,32 @@ app.use("/user", userController);
 app.use("/admin", adminController)
 
 app.get("/job", async (req, res) => {
-  const job = await jobModel.find()
-  // console.log(job)
+  console.log(req.query)
+  const query = req.query
+  
+    const job = await jobModel.find(query)
+  
   res.send(job)
+  // console.log(job)
+})
+
+
+
+
+
+app.delete("/resgisteredusers/:id" , async(req,res)=>{
+  const id= req.params.id ;
+  try{
+
+    await userModel.deleteOne({_id:id})
+  
+    // console.log(req.params)
+   res.send({msg:"User deleted successfully"}) 
+  }
+  catch(err){
+    console.log(err)
+  }
+
 })
 
 app.get("/registeredusers",async(req,res)=>{
