@@ -100,7 +100,7 @@ const Navbar = () => {
                         </Link>
                         <ul className="dropdown-menu">
                           <li>{adminToken?<Button bg="none" onClick={handleAdminLogout}>Logout</Button> : <Link className="dropdown-item" to="/adminlogin">Admin Login</Link>}</li>
-                          <li><Link className="dropdown-item" to="/">Another action</Link></li>
+                          <li><Link className="dropdown-item" to="/admindashboard">Admin dashboard</Link></li>
                         
                         </ul>
                       </li>
