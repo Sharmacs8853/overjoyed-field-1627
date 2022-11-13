@@ -55,9 +55,9 @@ const Navbar = () => {
                       
                     </Link>
                     <ul className="dropdown-menu">
-                      <li><Link className="dropdown-item" to="/user/jobs">It Job</Link></li>
-                      <li><Link className="dropdown-item" to="/">Another action</Link></li>
-                      <li><Link className="dropdown-item" to="/">Something else here</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">IT jobs</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">Sales jobs</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">Marketing jobs</Link></li>
                     </ul>
                   </li>
                   <li className="nav-item dropdown">
@@ -66,9 +66,9 @@ const Navbar = () => {
                       <Text className='hover-border' fontSize={'md'} fontWeight={'600'} color={'blackAlpha.800'}>Companies</Text>
                     </Link>
                     <ul className="dropdown-menu">
-                      <li><Link className="dropdown-item" to="/">Action</Link></li>
-                      <li><Link className="dropdown-item" to="/">Another action</Link></li>
-                      <li><Link className="dropdown-item" to="/">Something else here</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">MNC</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">Startup</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">Unicron</Link></li>
                     </ul>
                   </li>
                   <li className="nav-item dropdown">
@@ -76,9 +76,9 @@ const Navbar = () => {
                     <Text className='hover-border' fontSize={'md'} fontWeight={'600'} color={'blackAlpha.800'}>Services</Text>
                     </Link>
                     <ul className="dropdown-menu">
-                      <li><Link className="dropdown-item" to="/">Action</Link></li>
-                      <li><Link className="dropdown-item" to="/">Another action</Link></li>
-                      <li><Link className="dropdown-item" to="/">Something else here</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">Text Resume</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">Find Job</Link></li>
+                      <li><Link className="dropdown-item" to="/user/jobs">Contact Us</Link></li>
                     </ul>
                   </li>
                 </ul>
@@ -100,7 +100,7 @@ const Navbar = () => {
                         </Link>
                         <ul className="dropdown-menu">
                           <li>{adminToken?<Button bg="none" onClick={handleAdminLogout}>Logout</Button> : <Link className="dropdown-item" to="/adminlogin">Admin Login</Link>}</li>
-                          <li><Link className="dropdown-item" to="/">Another action</Link></li>
+                          <li><Link className="dropdown-item" to="/">Employers Login</Link></li>
                         
                         </ul>
                       </li>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "./JD.module.css";
 import { Divider } from "@chakra-ui/react";
 import { TfiBag, TfiWallet } from "react-icons/tfi";
@@ -6,6 +6,8 @@ import { CiLocationOn } from "react-icons/ci";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 const JDpage = () => {
+  const [jobs, setJobs] = useState('');
+  const [apply, setApply] = useState(false);
   const User = JSON.parse(localStorage.getItem("profile")) || "";
   const token = User.token;
   const navigate = useNavigate();
@@ -14,19 +16,21 @@ const JDpage = () => {
 
 
    const description =(id)=>{ axios.get(`http://localhost:8001/job/${id}`)
-   .then(res=>{console.log(res.data)})
+   .then(res=>{setJobs(res.data)})
    }
 useEffect(()=>{
   description(id)
 },[id])
 
   const handleRegister = () => {
-    navigate("/user/signup");
+    setApply(true);
   };
 
   const handleLogin = () => {
     navigate("/user/login");
   };
+
+  console.log("jobs",jobs);
 
   return (
     <div>
@@ -36,8 +40,8 @@ useEffect(()=>{
         { /* First box in JD PAGE its the toppest part start here*/}
           <div>
                     <div className={Styles.firstBox}>
-                        <p className={Styles.secSubHead}>Freshers_Desktop Support Engineer_Bangalore/Hyderabad/Chennai</p>
-                        <p className={Styles.jobd}>TeamLease 4.0 ⭐ (1841   Reviews)</p>
+                        <p className={Styles.secSubHead}>{jobs.job_title}</p>
+                        <p className={Styles.jobd}>{jobs.company_name} 4.0 ⭐ (1841   Reviews)</p>
                         <br />
                         <div className={Styles.secSubBox2}>
                                      <div  className={Styles.finalFlex}>
@@ -49,7 +53,7 @@ useEffect(()=>{
                                   <div className={Styles.flexBoxInSec}>
                                         <div  className={Styles.finalFlex}>
                                           <TfiWallet/>
-                                          <p className={Styles.jobd}>300,000 - 600,000 PA</p>
+                                          <p className={Styles.jobd}>{jobs.job_type}</p>
                                         </div>
                                   </div>
                              </div>
@@ -58,13 +62,13 @@ useEffect(()=>{
                                 <div className={Styles.flexBoxInSec}>
                                       <div  className={Styles.finalFlex}>
                                         <CiLocationOn/>
-                                        <p className={Styles.jobd}>Bangalore/Bengaluru</p>
+                                        <p className={Styles.jobd}></p>
                                       </div>
                                       {token?<div  className={Styles.forthflexbox}>
                                        <button className={Styles.btn2}>Save</button>
                                        <button className={Styles.btn1}>Apply</button>
                                       </div>: <div  className={Styles.forthflexbox}>
-                                       <button className={Styles.btn2} onClick={handleRegister}> Register To apply</button>
+                                       <button className={Styles.btn2} onClick={handleRegister}>{apply?"Applyed":"Apply"}</button>
                                        <button className={Styles.btn1} onClick={handleLogin}>Login In</button>
                                       </div>}
                                 </div>
@@ -84,6 +88,9 @@ useEffect(()=>{
                                 </div>
                           </div>
                     </div>
+    </div>
+    <div style={{margin:"100px"}}>
+      <p>{jobs.job_description}</p>
     </div>
   </div>  
   );

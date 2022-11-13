@@ -155,7 +155,7 @@ const JobsPage = () => {
 
 
                 {/* middle area */}
-                <Box width={'50%'}>
+                <Box width={'70%'}>
 
                     {
                         job?job.map((item)=>(
@@ -245,12 +245,6 @@ const JobsPage = () => {
                             </Box>
                         </Flex>
                     </Box>
-                </Box>
-
-
-
-                <Box width={'25%'} height={'100px'} border={'1px solid red'}>
-
                 </Box>
 
             </Flex>
