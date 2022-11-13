@@ -30,6 +30,7 @@ app.get("/job", async (req, res) => {
    
    
     let obj=req.query;
+    console.log(obj)
     let size=Object.keys(obj).length;
     try{
       if(size>0){
@@ -46,7 +47,12 @@ app.get("/job", async (req, res) => {
     }
    
   
-  // console.log(job)
+
+
+
+
+
+
   
 })
 
