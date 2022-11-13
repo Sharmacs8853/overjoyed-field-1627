@@ -30,8 +30,8 @@
    ## 🚀 Register Page:-
      <img src="" alt="Register"/>
    ## 🚀 Admin Register Page:-
-   <img src="" alt="Register"/>
+     <img src="" alt="Register"/>
    ## 🚀 Admin Dashboard Page:-
-     <img src="" alt="AdminDashboard"/>
+      <img src="" alt="AdminDashboard"/>
   
  
