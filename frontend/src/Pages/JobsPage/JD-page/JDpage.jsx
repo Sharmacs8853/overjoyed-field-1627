@@ -3,20 +3,37 @@ import Styles from './JD.module.css'
 import { Divider } from '@chakra-ui/react'
 import {TfiBag,TfiWallet} from 'react-icons/tfi'
 import {CiLocationOn} from 'react-icons/ci'
-import { useNavigate } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
+import {useDispatch, useSelector } from 'react-redux'
+import {useParams} from 'react-router-dom';
+import { useEffect } from 'react'
+import { getSingleJobDes } from '../../../Redux/AppReducer/action'
 const JDpage = () => {
-
   const User=JSON.parse(localStorage.getItem("profile")) || ""
   const token=User.token
   const navigate = useNavigate();
+  const jobdes = useSelector((store)=>store.AppReducer.jobdes)
+  const dispatch = useDispatch()
+  const params = useParams()
 
   const handleRegister=()=>{
    navigate("/user/signup")
-  }
+  } 
 
   const handleLogin=()=>{
     navigate("/user/login")
   }
+
+
+  useEffect(()=>{
+    dispatch( getSingleJobDes(params.id))
+  },[dispatch,params.id])
+
+  useEffect(()=>{
+    if(params){
+      dispatch( getSingleJobDes(params.id))
+    }
+  },[params,dispatch,navigate])
 
   return (
     <div>
@@ -67,7 +84,7 @@ const JDpage = () => {
                         <div>
                                 <div className={Styles.flexBoxInSec}>
                                       <div  className={Styles.finalFlex}>
-                                        <p className={Styles.jobd}>Posted: 2 days  |  agoOpenings: 10  |  Job Applicants: 2546</p>
+                                        <p className={Styles.jobd}>Posted: {jobdes.post_date}  |  agoOpenings: 10  |  Job Applicants: 2546</p>
                                       </div>
                                 </div>
                                 <div>
