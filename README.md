@@ -21,10 +21,9 @@
  - Ritesh Kumar-Fw19_0451 - [[LinkedIn Profile](https://www.linkedin.com/in/ritesh134340/)]
  
   ## <h4>We Named As:- </h4> JOBKAR🎉
-  ## <h4>LOGO:-</h4> <img src="" alt="We_created"/>
   
    ## 🚀 Landing Page:-
-     <img width="960" alt="2022-11-14" src="https://user-images.githubusercontent.com/99667782/201638776-238c244f-ded8-4c6b-a65a-b1218402979c.png">
+<img width="960" alt="2022-11-14" src="https://user-images.githubusercontent.com/99667782/201639509-c418f573-7952-48ad-94b5-a78a05b5f69c.png">
 
    ## 🚀 Home Page:-
 <img width="960" alt="2022-11-14 (4)" src="https://user-images.githubusercontent.com/99667782/201638930-9d59b94d-c89f-411f-bf86-91b7bbd7c0bf.png">
