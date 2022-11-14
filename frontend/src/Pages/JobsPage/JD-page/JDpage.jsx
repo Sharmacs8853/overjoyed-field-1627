@@ -9,11 +9,11 @@ const JDpage = () => {
   const User = JSON.parse(localStorage.getItem("profile")) || "";
   const token = User.token;
   const navigate = useNavigate();
-
+  const {REACT_APP_MONGO_URL}=process.env
    const {id}= useParams()
    console.log(id)
 
-   const description =(id)=>{ axios.get(`http://localhost:8001/job/${id}`)
+   const description =(id)=>{ axios.get(`${REACT_APP_MONGO_URL}/job/${id}`)
    .then(res=>{console.log(res.data)})
    }
 useEffect(()=>{
