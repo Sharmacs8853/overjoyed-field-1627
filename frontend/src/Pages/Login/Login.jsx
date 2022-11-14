@@ -26,6 +26,7 @@ const Login = () => {
   const redirectTo=location.state?.data || "/"
   console.log(redirectTo)
 
+
   const handleSubmit=(e)=>{
     e.preventDefault();
     if(!email || !password){
@@ -56,7 +57,7 @@ const Login = () => {
         }
         
         localStorage.setItem("profile",JSON.stringify(data))
-         navigate(redirectTo,{replace:true})
+         navigate(redirectTo=="/"?"/home":redirectTo,{replace:true})
        }
        
        }).catch((err)=>{

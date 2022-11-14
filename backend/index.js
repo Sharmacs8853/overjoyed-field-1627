@@ -27,7 +27,7 @@ app.get("/job", async (req, res) => {
     const job = await jobModel.find(query)
   
   res.send(job)
-  // console.log(job)
+
 })
 
 app.get("/job/:id", async (req, res) => {
@@ -42,7 +42,7 @@ app.get("/job/:id", async (req, res) => {
   catch(err){
     console.log(err)
   }
-  // console.log(job)
+ 
 })
 
 
@@ -55,7 +55,7 @@ app.delete("/resgisteredusers/:id" , async(req,res)=>{
 
     await userModel.deleteOne({_id:id})
   
-    // console.log(req.params)
+   
    res.send({msg:"User deleted successfully"}) 
   }
   catch(err){
