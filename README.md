@@ -24,14 +24,18 @@
   ## <h4>LOGO:-</h4> <img src="" alt="We_created"/>
   
    ## 🚀 Landing Page:-
-     <img src="" alt="Landing"/>
+     <img width="960" alt="2022-11-14" src="https://user-images.githubusercontent.com/99667782/201638776-238c244f-ded8-4c6b-a65a-b1218402979c.png">
+
    ## 🚀 Home Page:-
-     <img src="" alt="Home"/>
+<img width="960" alt="2022-11-14 (4)" src="https://user-images.githubusercontent.com/99667782/201638930-9d59b94d-c89f-411f-bf86-91b7bbd7c0bf.png">
+
    ## 🚀 Register Page:-
-     <img src="" alt="Register"/>
+<img width="960" alt="2022-11-14 (1)" src="https://user-images.githubusercontent.com/99667782/201639003-236ed6dd-772c-4b8f-aec2-9e9931706eb1.png">
+
    ## 🚀 Admin Register Page:-
-     <img src="" alt="Register"/>
+<img width="960" alt="2022-11-14 (2)" src="https://user-images.githubusercontent.com/99667782/201639051-7ac4843c-9b67-4ed9-8569-98ca3989289c.png">
+
    ## 🚀 Admin Dashboard Page  :-
-      <img src="" alt="AdminDashboard"/>
-  
+ <img width="960" alt="2022-11-14 (3)" src="https://user-images.githubusercontent.com/99667782/201639098-9fc6e51c-9b5d-4ca9-9ef2-8faf3d8e5d33.png">
+
  <h2 align="center" >Thank You for visiting our Project Repository.</h2>
