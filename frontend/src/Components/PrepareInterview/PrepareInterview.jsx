@@ -37,7 +37,7 @@ const PrepareInterview = () => {
                           <Text>
                             <Flex>
                               <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Cognizant</Text>
-                              <Text><i class="fa-solid fa-chevron-right"></i> </Text>
+                              <Text><i Name="fa-solid fa-chevron-right"></i> </Text>
                             </Flex>
                           </Text>
                           <Text>1.6K+ interviews</Text>
@@ -55,6 +55,10 @@ const PrepareInterview = () => {
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
+
+                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Cognizant</Text>
+                              <Text><i className="fa-solid fa-chevron-right"></i> </Text>
+
                               <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Accenture</Text>
                               <Text><i class="fa-solid fa-chevron-right"></i> </Text>
                             </Flex>
@@ -74,8 +78,12 @@ const PrepareInterview = () => {
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
+
+                              <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Cognizant</Text>
+                              <Text><i className="fa-solid fa-chevron-right"></i> </Text>
+
                               <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Amazon</Text>
-                              <Text><i class="fa-solid fa-chevron-right"></i> </Text>
+
                             </Flex>
                           </Text>
                           <Text>1.6K+ interviews</Text>
@@ -93,8 +101,11 @@ const PrepareInterview = () => {
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
+
+                       
+
                               <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Flipkart</Text>
-                              <Text><i class="fa-solid fa-chevron-right"></i> </Text>
+
                             </Flex>
                           </Text>
                           <Text>1.6K+ interviews</Text>
@@ -112,8 +123,12 @@ const PrepareInterview = () => {
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
+
+                       
+
                               <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>Byjus</Text>
                               <Text><i class="fa-solid fa-chevron-right"></i> </Text>
+
                             </Flex>
                           </Text>
                           <Text>1.6K+ interviews</Text>
@@ -131,8 +146,12 @@ const PrepareInterview = () => {
                         <Flex flexDirection={'column'}>
                           <Text>
                             <Flex>
+
+   
+
                               <Text fontSize={'md'} color={'gray.700'} fontWeight={'semibold'}>TCS</Text>
                               <Text><i class="fa-solid fa-chevron-right"></i> </Text>
+
                             </Flex>
                           </Text>
                           <Text>1.6K+ interviews</Text>

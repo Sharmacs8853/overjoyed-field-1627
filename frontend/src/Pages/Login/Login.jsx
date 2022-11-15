@@ -23,7 +23,8 @@ const Login = () => {
   const [size,setWindowSize]=useState(window.innerWidth)
   const {isError,isLoading}=useSelector((state)=>{return {isError:state.AuthReducer.isError,isLoading:state.AuthReducer.isLoading}})
 
-   const redirectTo=location.state?.data || "/"
+  const redirectTo=location.state?.data || "/"
+  console.log(redirectTo)
 
   const handleSubmit=(e)=>{
     e.preventDefault();

@@ -20,6 +20,7 @@ const AdminLogin = () => {
   const [formData, setFormData] = useState({});
   const nav = useNavigate();
   const location=useLocation()
+  const {REACT_APP_MONGO_URL}=process.env
   const handleChange = (e) => {
     const { value, name } = e.target;
 
@@ -33,7 +34,7 @@ const AdminLogin = () => {
     try {
       setIsLoading(true)
       const data  = await axios.post(
-        "http://localhost:8001/admin/login",
+        `${REACT_APP_MONGO_URL}/admin/login`,
         formData
       );
 
