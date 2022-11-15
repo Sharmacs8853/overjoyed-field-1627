@@ -8,5 +8,4 @@ import { legacy_createStore,applyMiddleware,combineReducers } from "redux";
 const rootReducer=combineReducers({AppReducer,AuthReducer})
 const store=legacy_createStore(rootReducer,applyMiddleware(thunk))
 
-
 export {store}

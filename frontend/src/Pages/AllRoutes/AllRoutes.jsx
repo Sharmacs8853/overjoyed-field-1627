@@ -27,7 +27,13 @@ const AllRoutes = () => {
       <Route path="/adminlogin" element={<AdminLogin />}></Route>
       <Route path="/user/signup" element={<Signup />}></Route>
       <Route path="/user/jobs" element={<JobsPage />}></Route>
-      <Route path="/jd/:id" element={<PrivateRoute><JDpage /></PrivateRoute>} />
+
+   
+
+      <Route path="/jd/:id" element={
+        <PrivateRoute><JDpage /></PrivateRoute>
+      } />
+
       <Route
         path="/admindashboard"
         element={

@@ -8,24 +8,24 @@ const Dreamjob = () => {
             <Box className='inner-job-div'>
                 <Heading>Find your dream job now</Heading>
                 <Text color={'gray.500'}>5 lakh+ jobs for you to explore</Text>
-                <Box className='search-div'>
+                <Box className='search-div' height={"63px"}>
                     <Box alignItems={'center'}>
-                        <Flex gap={'10px'}>
-                            <Box p={'3px'} color={'gray.500'}>
-                                <i className="fa-solid fa-magnifying-glass"></i>
+                        <Flex gap={"15px"}>
+                            <Box width="40px" justifyContent={"center"}  padding-left="15px" size={"45px"} display={"flex"} alignItems={"center"} color={'gray.500'}>
+                                <i  className="fa-solid fa-magnifying-glass"></i>
                             </Box>
-                            <Box p={'3px'} borderLeft={'1px solid'} borderColor={'gray.300'}>
+                            <Box display={"flex"} align-items={"center"} borderLeft={'1px solid'} borderColor={'gray.300'}>
                                 <Input variant='unstyled' width={'300px'} px={'10px'} placeholder='Enter skills/ designations / Companies' type='text' />
                             </Box>
-                            <Box borderLeft={'1px solid'} borderColor={'gray.300'}>
+                            <Box display={"flex"} align-items={"center"} borderLeft={'1px solid'} borderColor={'gray.300'}>
                                 <Input variant='unstyled' px={'10px'} placeholder='Select experience' type='text' />
                             </Box>
-                            <Box borderLeft={'1px solid'} borderColor={'gray.300'}>
+                            <Box display={"flex"} align-items={"center"} borderLeft={'1px solid'} borderColor={'gray.300'}>
                                 <Input variant='unstyled' px={'10px'} placeholder='Enter location' type='text' />
                             </Box>
                             <Spacer/>
                             <Box>
-                                <Button colorScheme='linkedin' borderRadius={'20px'} px={"25px"}><Text fontSize={'lg'}>Search</Text></Button>
+                                <Button fontWeight={"bold"} color={"white"} backgroundColor={"rgb(69,126,255)"} borderRadius={'25px'}padding={"24px 38px"}><Text fontSize={'lg'}>Search</Text></Button>
                             </Box>
                         </Flex>
                     </Box>
