@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./JD.module.css";
-import { Divider } from "@chakra-ui/react";
+import { Divider,Alert ,Button, AlertIcon,AlertTitle,AlertDescription } from "@chakra-ui/react";
 import { TfiBag, TfiWallet } from "react-icons/tfi";
 import { CiLocationOn } from "react-icons/ci";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams,Link } from "react-router-dom";
 import axios from "axios";
 
 const JDpage = () => {
+  const [isLoading,setIsLoading]=useState(false)
   const [jobs, setJobs] = useState('');
   const [apply, setApply] = useState(false);
   const User = JSON.parse(localStorage.getItem("profile")) || "";
@@ -15,16 +16,24 @@ const JDpage = () => {
 
   const {REACT_APP_MONGO_URL}=process.env
    const {id}= useParams()
-   console.log(id)
 
-   const description =(id)=>{ axios.get(`${REACT_APP_MONGO_URL}/job/${id}`)
-   .then(res=>{console.log(res.data)})
+ 
 
+   const description =(id)=>{ 
+    setIsLoading(true)
+    axios.get(`${REACT_APP_MONGO_URL}/job/${id}`).then((res)=>{
+     setJobs(res.data)
+     setIsLoading(false)
+   }).catch((err)=>{
+    setIsLoading(false)
+    console.log(err)
+   })
   
 
    }
   
 useEffect(()=>{
+  
   description(id)
 },[id])
 
@@ -38,11 +47,34 @@ useEffect(()=>{
   };
   
 
-  console.log("jobs",jobs);
+
 
   return (
-    <div>
-    <div>
+   isLoading ? <img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img> : <div>
+  {  apply?  <Alert
+  status='success'
+  variant='subtle'
+  flexDirection='column'
+  alignItems='center'
+  textAlign='center'
+  height='270px'
+  width="450px"
+  margin="auto"
+  marginTop="40px"
+  borderRadius="8px"
+  
+ 
+>
+  <AlertIcon boxSize='40px' mr={0} />
+  <AlertTitle mt={4} mb={1} fontSize='lg'>
+    Application submitted!
+  </AlertTitle>
+  <AlertDescription maxWidth='sm' marginBottom="50px">
+    Thanks for submitting your application. Our team will get back to you soon.
+  </AlertDescription>
+  <Button backgroundColor="rgb(69,126,255)" _hover={{backgroundColor:"rgb(69,126,255)",color:"white"}} color="white" ><Link style={{color:"white"}} to="/user/jobs">Go back</Link></Button>
+</Alert>:
+<div>
       {/* First box in JD PAGE its the toppest part start here*/}
       <div className={Styles.topestPart}></div>
       {/* First box in JD PAGE its the toppest part end here */}
@@ -71,7 +103,7 @@ useEffect(()=>{
                                 <div className={Styles.flexBoxInSec}>
                                       <div  className={Styles.finalFlex}>
                                         <CiLocationOn/>
-                                        <p className={Styles.jobd}></p>
+                                        <p className={Styles.jobd}>Pune</p>
                                       </div>
                                       {token?<div  className={Styles.forthflexbox}>
                                        <button className={Styles.btn2}>Save</button>
@@ -101,12 +133,12 @@ useEffect(()=>{
           </div>
         </div>
       </div>
-    </div>
+    </div>}
 
     <div style={{margin:"100px"}}>
-      <p>{jobs.job_description}</p>
+     { !apply && <p >{jobs.job_description}</p>}
     </div>
-  </div>  
+    </div>  
 
   );
 };

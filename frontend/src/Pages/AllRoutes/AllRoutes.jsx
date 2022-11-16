@@ -29,6 +29,9 @@ const AllRoutes = () => {
 
 
       <Route path="/user/jobs" element={<JobsPage />}></Route>
+
+   
+
       <Route path="/jd/:id" element={
         <PrivateRoute><JDpage /></PrivateRoute>
       } />

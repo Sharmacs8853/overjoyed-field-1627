@@ -87,10 +87,10 @@ const Navbar = () => {
               <Box>
                 <Flex gap={'10px'}>
                   <Box>
-                    <Button colorScheme='linkedin' borderRadius={'20px'} px={"25px"} variant='outline' >{token?User.name:<Link to="/user/login">Login</Link>}</Button>
+                    <Button _hover={{color:"rgb(74,146,227)", borderColor:"rgb(74,146,227)",backgroundColor:"white"}} color='rgb(74,146,227)' borderRadius={'20px'} borderColor="rgb(74,146,227)" px={"25px"} variant='outline' >{token?User.name:<Link to="/user/login">Login</Link>}</Button>
                   </Box>
                   <Box>
-                    <Button colorScheme='red' borderRadius={'20px'} px={"25px"}>{token?<h5 onClick={handleLogout}>Logout</h5>:<Link to="/user/signup">Register</Link>}</Button>
+                    <Button _hover={{color:"white", backgroundColor:"rgb(255,117,85)"}} color="white" backgroundColor={"rgb(255,117,85)"} borderRadius={'20px'} px={"20px"}>{token?<h5 onClick={handleLogout}>Logout</h5>:<Link to="/user/signup">Register</Link>}</Button>
                   </Box>
                   <Box>
                     <ul className='navbar-nav'>

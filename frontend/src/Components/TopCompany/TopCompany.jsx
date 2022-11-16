@@ -56,7 +56,11 @@ const TopCompany = () => {
                                 <Box className='job-cart' m={'10px'} p={'10px'}>
                                     <Flex gap={'5px'}>
                                         <Text color={'gray.800'} >Product </Text>
-                                        <Text color={'gray.500'}><i class="fa-solid fa-chevron-right"></i></Text>
+
+                                        <Text color={'gray.500'}><i className="fa-solid fa-chevron-right"></i></Text>
+
+                                      
+
 
                                     </Flex>
                                     <Text color={'gray.500'}>756 are actively hiring</Text>
@@ -77,7 +81,9 @@ const TopCompany = () => {
                                 <Box className='job-cart' m={'10px'} p={'10px'}>
                                     <Flex gap={'5px'}>
                                         <Text color={'gray.800'} >Banking  </Text>
-                                        <Text color={'gray.500'}><i class="fa-solid fa-chevron-right"></i></Text>
+
+                                        <Text color={'gray.500'}><i className="fa-solid fa-chevron-right"></i></Text>
+
 
                                     </Flex>
                                     <Text color={'gray.500'}>700 are actively hiring</Text>
@@ -99,6 +105,10 @@ const TopCompany = () => {
                                     <Flex gap={'5px'}>
                                         <Text color={'gray.800'} >Hospitality </Text>
 
+                                        <Text color={'gray.500'}><i className="fa-solid fa-chevron-right"></i></Text>
+
+
+
                                     </Flex>
                                     <Text color={'gray.500'}>35 are actively hiring</Text>
                                     <Box>
@@ -118,6 +128,10 @@ const TopCompany = () => {
                                 <Box className='job-cart' m={'10px'} p={'10px'}>
                                     <Flex gap={'5px'}>
                                         <Text color={'gray.800'} >Fintech </Text>
+
+                               <Text color={'gray.500'}><i className="fa-solid fa-chevron-right"></i></Text>
+
+
 
                                     </Flex>
                                     <Text color={'gray.500'}>78+ are actively hiring</Text>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { VscBriefcase } from "react-icons/vsc";
 import { GiSchoolBag } from "react-icons/gi";
+import {IoMdCheckmark} from "react-icons/io"
 import {
   HeadingWrapper,
   SignupWrapperLeft,
@@ -34,19 +35,18 @@ const Signup = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [mobile,setMobile]=useState("");
-  const [city,setCity]=useState("");
+  const [mobile,setMobile]=useState("+91 ");
   const [password, setPassword] = useState("");
   const [update,setUpdate]=useState(false)
   const [fresher,setFresher]=useState(false)
   const [exp,setExp]=useState(false)
-
-  // const { isError, isLoading } = useSelector((state) => {
-  //   return {
-  //     isError: state.AuthReducer.isError,
-  //     isLoading: state.AuthReducer.isLoading,
-  //   };
-  // });
+  const [cityValue,setCityValue]=useState("")
+  const { isError, isLoading } = useSelector((state) => {
+    return {
+      isError: state.AuthReducer.isError,
+      isLoading: state.AuthReducer.isLoading,
+    };
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -84,8 +84,36 @@ const Signup = () => {
   })
 
 
+  const handleFresher=()=>{
+       setFresher(true)
+       setExp(false)
+  }
+
+  const handleExp=()=>{
+    setFresher(false)
+    setExp(true)
+      
+  }
+
+  const handleCityValue=(e)=>{
+    e.preventDefault()
+      setCityValue(e.target.value)
+  }
+
+  
+
+  const getResume=(e)=>{
+    e.preventDefault();
+    console.log(e.target.files)
+  }
+
+  const  handleResume=()=>{
+    getResume()
+}
+
+
   return (
-    // isLoading ?<img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img> :
+
    
    size<1300 ? <SmallLoginWrapper>
     <div className="small-login-main-div">
@@ -139,7 +167,7 @@ const Signup = () => {
                 <button  className="small-signup-register">Register</button>
               
                 </div>
-</SmallLoginWrapper> : <MainSignup>
+</SmallLoginWrapper> :isLoading? <img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img> : <MainSignup>
       <SignupWrapper>
         <SignupWrapperLeft>
           <img
@@ -218,56 +246,59 @@ const Signup = () => {
                   placeholder="Mobile Number"
                   onChange={(e) => setMobile(e.target.value)}
                 ></input>
-                <WorkStatusWrapper fresher={fresher} >
+                <WorkStatusWrapper fresher={fresher} exp={exp} >
                   <label>Work Status</label>
                   <div className="work-status">
-                    <div className="Ind-status" id="exper" onClick={()=>setFresher(fresher?false:true)} >
+                    <div className="Ind-status" id="exper" onClick={handleExp}  >
                       <div>
                         <VscBriefcase className="Brief-icon" />
                       </div>
                       <div>
                         <h2>I'm Experienced</h2>
                         <p>I have work experience (excluding internships)</p>
+                        <IoMdCheckmark id="left-check"/>
                       </div>
                     </div>
 
-                    <div className="Ind-status" id="fresh" onClick={()=>setFresher(fresher?false:true)}>
+                    <div className="Ind-status" id="fresh" onClick={handleFresher}>
                       <div>
                         <GiSchoolBag className="Brief-icon" />
                       </div>
                       <div>
                         <h2>I'm a Fresher</h2>
                         <p>I am a student/ Haven't worked after graduation</p>
+                        <IoMdCheckmark id="right-check"/>
                       </div>
                     </div>
                   </div>
                 </WorkStatusWrapper>
+              
+                <SuggestionWrapper fresher={fresher}>
                 <label>Current city</label>
                 <br />
                 <input
-                  value={city}
+                  value={cityValue}
                   type="text"
                   placeholder="Mention the city you live in"
-                  onChange={(e) => setCity(e.target.value)}
                 ></input>
                 <br />
-                <SuggestionWrapper>
                   <label>Suggestions:</label>
                   <div >
-                    <button className="place-button">Kolkata</button>
-                    <button className="place-button">Bangalore/Bengaluru</button>
-                    <button className="place-button">Hyderabad/Secunderabad</button>
-                    <button className="place-button">Mumbai</button>
-                    <button className="place-button">Chennai</button>
-                    <button className="place-button">New Delhi</button>
-                    <button className="place-button">Pune</button>
+                    <button value="Kolkata" className="place-button" onClick={handleCityValue}>Kolkata</button>
+                    <button value="Banglore/Bengaluru" className="place-button" onClick={handleCityValue}>Bangalore/Bengaluru</button>
+                    <button value="Hyderabad/Secunderabad" className="place-button" onClick={handleCityValue}>Hyderabad/Secunderabad</button>
+                    <button value="Mumbai" className="place-button" onClick={handleCityValue}>Mumbai</button>
+                    <button value="Chennai" className="place-button" onClick={handleCityValue}>Chennai</button>
+                    <button value="New Delhi" className="place-button" onClick={handleCityValue} >New Delhi</button>
+                    <button value="Pune" className="place-button"  onClick={handleCityValue}>Pune</button>
                   </div>
                 </SuggestionWrapper>
-                <ResumeSection>
+                <ResumeSection fresher={fresher}>
                   <label>Resume</label>
-                  <div className="resume-button">
-                    
-                    <button className="upload-resume" >Upload Resume</button>
+              
+                  <div className="resume-button"  >
+                    <button className="upload-resume">Upload Resume</button>
+                  {/* <input style={{display:"none"}} type="file"  accept=".pdf" ></input> */}
                     <p>Doc, Docx, PDF, RTF | Max:2MB</p>
                   </div>
                   <p className="Recruter">

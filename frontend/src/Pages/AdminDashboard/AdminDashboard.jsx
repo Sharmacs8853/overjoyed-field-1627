@@ -9,8 +9,13 @@ import axios from "axios";
 const AdminDashboard = () => {
   const [job, setJobs] = useState([]);
   const [users, setUsers] = useState([]);
+
+  const [isLoading,setIsLoading]=useState(false)
+
   const {REACT_APP_MONGO_URL}=process.env
   const handleJobs = () => {
+    setIsLoading(true)
+
     return fetch(`${REACT_APP_MONGO_URL}/job`, {
       method: "GET",
       headers: {
@@ -20,14 +25,22 @@ const AdminDashboard = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        
         setUsers(null);
         setJobs(res);
-      });
+        setIsLoading(false)
+      }).catch((err)=>{
+        setIsLoading(false)
+        console.log(err)
+      })
   };
 
   // // --------handle user------
   const handleUsers = (job) => {
+
+    setIsLoading(true)
+
+
     return fetch(`${REACT_APP_MONGO_URL}/registeredusers`, {
       method: "GET",
       headers: {
@@ -37,38 +50,51 @@ const AdminDashboard = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        // console.log(res);
+     
+     
         setJobs(null);
         setUsers(res);
-      });
+        setIsLoading(false)
+      }).catch((err)=>{
+        setIsLoading(false)
+        console.log(err)
+      })
+
+
   };
 
   // ----handle Delete--------
 
 
-  const handleDelete= (id)=>{
-        
-    console.log(id)
-    axios.delete(`${REACT_APP_MONGO_URL}/resgisteredusers/${id}`)
-    .then(res=>{
-       
-      alert(res.data.msg)
-      handleUsers()
-      console.log("delete",res.data)
-      console.log("delete success")
+  const handleDeleteuser = (id) => {
+   
+    setIsLoading(true)
+    axios.delete(`${REACT_APP_MONGO_URL}/registeredusers/${id}`).then((res) => {
+      alert(res.data.msg);
+      setIsLoading(false)
+      handleUsers();
+    
+    }).catch((err)=>{
+      setIsLoading(false)
+      console.log(err)
     })
+  };
 
 
   // ---------delete job------
   const handleDeletejob = (id) => {
-    console.log(id);
+      setIsLoading(true)
+ 
+    axios.delete(`${REACT_APP_MONGO_URL}/job/${id}`).then((res) => {
 
-    axios.delete(`http://localhost:8001/job/${id}`).then((res) => {
-      alert(res.data.msg);
+      setIsLoading(false)
       handleJobs();
-      console.log("delete", res.data);
-      console.log("delete success");
-    });
+      
+     
+    }).catch((err)=>{
+      console.log(err);
+      setIsLoading(false)
+    })
   };
 
   return (
@@ -87,7 +113,7 @@ const AdminDashboard = () => {
             </Button>
           </div>
         </div>
-        <div className="admindata" style={{ padding: "40px" }}>
+        {isLoading? <img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img>  : <div className="admindata" style={{ padding: "40px" }}>
           {job
             ? job.map((item) => (
                 <div className="P_jobcard">
@@ -180,7 +206,8 @@ const AdminDashboard = () => {
                 </div>
               ))
             : ""}
-        </div>
+        </div>}
+       
       </div>
     </>
   );

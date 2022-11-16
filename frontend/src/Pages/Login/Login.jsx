@@ -24,7 +24,12 @@ const Login = () => {
   const {isError,isLoading}=useSelector((state)=>{return {isError:state.AuthReducer.isError,isLoading:state.AuthReducer.isLoading}})
 
   const redirectTo=location.state?.data || "/"
-  console.log(redirectTo)
+
+ 
+
+
+
+
 
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -56,7 +61,8 @@ const Login = () => {
         }
         
         localStorage.setItem("profile",JSON.stringify(data))
-         navigate(redirectTo,{replace:true})
+        
+         navigate(redirectTo=="/"?"/home":redirectTo,{replace:true})
        }
        
        }).catch((err)=>{

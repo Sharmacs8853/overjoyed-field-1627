@@ -199,6 +199,7 @@ export const FormWrapper = styled.div`
     margin-top: 5px;
     text-decoration: none;
   }
+
 `;
 
 export const InputWrapper = styled.div`
@@ -224,8 +225,6 @@ export const WorkStatusWrapper = styled.div`
     align-items: center;
     justify-content: space-around;
     background-color: white;
-   
-    border:1px solid #d3e1ea;
     width: 290px;
     margin-right: 12px;
     height: 100%;
@@ -244,19 +243,46 @@ export const WorkStatusWrapper = styled.div`
     }
   }
 
-  /* #fresh{
+  #fresh{
       border:${({fresher})=>(fresher?"1px solid rgb(69, 126, 255)":"1px solid #d3e1ea")};
- 
+     background-color:${({fresher})=>fresher?"rgb(242,246,255)":"white"}
   
     }
     #exper{
-      border:${({fresher})=>(fresher?"1px solid rgb(69, 126, 255)":"1px solid #d3e1ea")};
+      border:${({exp})=>(exp?"1px solid rgb(69, 126, 255)":"1px solid #d3e1ea")};
+      background-color: ${({exp})=>exp?"rgb(242,246,255)":"white"};
       
-    } */
+    }
+    #left-check{
+      background-color:rgb(69, 126, 255);
+      color:white;
+      border-Radius:50%;
+       display:inline;
+       font-size:12px;
+        padding:3px;
+        width:20px;
+        height:20px;
+        margin-top:-150px;
+       margin-left:232px;
+       visibility:${({exp})=>exp?"show":"hidden"}
+    }
+    #right-check{
+      background-color:rgb(69, 126, 255);
+      color:white;
+      border-Radius:50%;
+       display:inline;
+       font-size:12px;
+        padding:3px;
+        width:20px;
+        height:20px;
+        margin-top:-150px;
+       margin-left:232px;
+       visibility:${({fresher})=>fresher?"show":"hidden"}
+    }
   .Brief-icon {
     color: rgb(69, 126, 255);
-    margin-left: 5px;
-    margin-right: 15px;
+    margin-left: 14px;
+    margin-right: 5px;
     font-size: 25.5px;
     font-weight: 200;
   }
@@ -267,6 +293,7 @@ export const WorkStatusWrapper = styled.div`
     margin-bottom: -5px;
     font-weight: 600;
     line-height: 20px;
+    padding-top:15px;
     overflow-wrap: break-word;
   }
 `;
@@ -275,7 +302,7 @@ export const SuggestionWrapper = styled.div`
   width: 570px;
   margin-bottom: 20px;
   background-color: white;
-
+  visibility: ${({fresher})=>fresher?"show":"hidden"};
   div {
     background-color: white;
   }
@@ -294,7 +321,7 @@ export const SuggestionWrapper = styled.div`
 `;
 
 export const ResumeSection = styled.div`
-  margin-top: 20px;
+  margin-top:${({fresher})=>fresher?"20px":"-250px"};
   margin-bottom: 20px;
   background-color: white;
   .resume-button {
