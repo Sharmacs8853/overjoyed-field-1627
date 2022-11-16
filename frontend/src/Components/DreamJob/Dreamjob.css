@@ -21,3 +21,61 @@
     border-radius: 30px;
     background-color: white;
 }
+.filter-by-search{
+  width:500px;
+  background-color: white;
+  position:absolute;
+ border:1px solid transparent;
+ border-radius:14px;
+  z-index:999;
+  overflow:hidden;
+  margin-left:250px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+} 
+
+.filter-indv-div{
+  width:100%;
+  border:1px solid gray;
+}
+.filter-img{
+  width:30px;
+  height:30px;
+  margin-right:13px;
+  border-radius:50%;
+}
+.filter-link{
+    display:flex;
+    margin-top:5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.dis-of-comp{
+    font-size:13px;
+    font-weight: 500;
+    margin-left:10px;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-family: sans-serif;
+}
+.filter-left-div{
+    width:80%;
+}
+.head-of-job{
+    font-weight:600;
+    margin-left:10px;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-family: sans-serif;
+    line-height: 16px;
+}
+
+
+.job_box{
+    min-height: 400px;
+    width: 100%;
+  
+}
+.border{
+    border: 1px solid rgb(223, 220, 220);
+    border-radius: 2px;
+}
