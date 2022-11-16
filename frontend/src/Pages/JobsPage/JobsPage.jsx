@@ -11,7 +11,7 @@ const JobsPage = () => {
     const [city,setCity]=useState(false);
     const [state,setState]=useState(false);
     const navigation = useNavigate()
-
+    const {REACT_APP_MONGO_URL}=process.env
     const [filter,setFilter]=useState([])
 
    console.log(filter)
@@ -29,14 +29,10 @@ const JobsPage = () => {
 
 
     const handleJobs = () => {
-        let payload;
-        if(filter.length===0){
-             payload="/"
-        }else if(filter.length===1){
 
-             payload = `category=${filter}`;
-        }
-        return fetch(`http://localhost:8001/job?${payload}`, {
+        const payload={};
+        return fetch(`${REACT_APP_MONGO_URL}/job?${payload}`, {
+
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -173,7 +169,7 @@ const JobsPage = () => {
 
 
                 {/* middle area */}
-                <Box width={'50%'}>
+                <Box width={'70%'}>
 
                     {
                         job?job.map((item)=>(
@@ -263,12 +259,6 @@ const JobsPage = () => {
                             </Box>
                         </Flex>
                     </Box>
-                </Box>
-
-
-
-                <Box width={'25%'} height={'100px'} border={'1px solid red'}>
-
                 </Box>
 
             </Flex>

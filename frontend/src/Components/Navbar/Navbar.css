@@ -9,6 +9,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    /* border: 2px solid; */
 }
 
 .dropdown:hover .dropdown-menu{
@@ -20,4 +21,10 @@
 .hover-border:hover{
     border-bottom: 4px solid orangered;
     border-radius: 3px;
+}
+
+@media only screen and (max-width: 700px){
+    .nav-box{
+        display: flex;
+    }
 }

@@ -10,23 +10,21 @@ import {
 import {Link} from "react-router-dom";
 import {login} from "../../Redux/AuthReducer/action"
 import { useDispatch,useSelector } from "react-redux";
-import {useNavigate} from "react-router-dom"
+import {useNavigate,useLocation} from "react-router-dom"
 import {IoMdCheckmark} from "react-icons/io"
 import { LoginSmallWrapper } from "../../Style/loginRender.style";
 
 const Login = () => {
-
+  const location=useLocation()
   const dispatch=useDispatch();
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const navigate=useNavigate();
   const [size,setWindowSize]=useState(window.innerWidth)
-
-
-
   const {isError,isLoading}=useSelector((state)=>{return {isError:state.AuthReducer.isError,isLoading:state.AuthReducer.isLoading}})
 
-
+  const redirectTo=location.state?.data || "/"
+  console.log(redirectTo)
 
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -56,9 +54,9 @@ const Login = () => {
            token:user_token,
            id:user_id
         }
-       
+        
         localStorage.setItem("profile",JSON.stringify(data))
-         navigate("/home")
+         navigate(redirectTo,{replace:true})
        }
        
        }).catch((err)=>{

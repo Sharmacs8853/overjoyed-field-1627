@@ -83,15 +83,10 @@ const Signup = () => {
     window.addEventListener('resize', handleResize)
   })
 
-  const handlePlace=(event,value)=>{
-      event.preventDefault()
-      console.log(value)
-  }
-
 
   return (
     // isLoading ?<img src="https://createwebsite.net/wp-content/uploads/2015/09/GD.gif" style={{height:"150px",display:"flex",alignItems:"center",justifyContent:"center",margin:"auto",marginTop:"200px"}}></img> :
-  
+   
    size<1300 ? <SmallLoginWrapper>
     <div className="small-login-main-div">
     <h2 className="small-login-heading">Register for free to apply jobs</h2>
@@ -259,13 +254,13 @@ const Signup = () => {
                 <SuggestionWrapper>
                   <label>Suggestions:</label>
                   <div >
-                    <button className="place-button" onChange={()=>handlePlace("Kolkata")}>Kolkata</button>
-                    <button  className="place-button" onChange={()=>handlePlace("Bangalore")}>Bangalore/Bengaluru</button>
-                    <button className="place-button" onChange={()=>handlePlace("Hyderabad/Secunderabad")}>Hyderabad/Secunderabad</button>
-                    <button className="place-button" onChange={()=>handlePlace("Mumbai")}>Mumbai</button>
-                    <button className="place-button" onChange={()=>handlePlace("Chennai")}>Chennai</button>
-                    <button className="place-button" onChange={()=>handlePlace("New Delhi")}>New Delhi</button>
-                    <button className="place-button" onChange={()=>handlePlace("Pune")}>Pune</button>
+                    <button className="place-button">Kolkata</button>
+                    <button className="place-button">Bangalore/Bengaluru</button>
+                    <button className="place-button">Hyderabad/Secunderabad</button>
+                    <button className="place-button">Mumbai</button>
+                    <button className="place-button">Chennai</button>
+                    <button className="place-button">New Delhi</button>
+                    <button className="place-button">Pune</button>
                   </div>
                 </SuggestionWrapper>
                 <ResumeSection>

@@ -12,14 +12,15 @@ import {
 } from "@chakra-ui/react";
 
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 
 const AdminLogin = () => {
   const [isLoading,setIsLoading]=useState(false)
   const [formData, setFormData] = useState({});
   const nav = useNavigate();
- 
+  const location=useLocation()
+  const {REACT_APP_MONGO_URL}=process.env
   const handleChange = (e) => {
     const { value, name } = e.target;
 
@@ -33,15 +34,15 @@ const AdminLogin = () => {
     try {
       setIsLoading(true)
       const data  = await axios.post(
-        "http://localhost:8001/admin/login",
+        `${REACT_APP_MONGO_URL}/admin/login`,
         formData
       );
 
         const adminToken=data.data.token
-        
+        const redirectTo=location.state?.data || "/"
         localStorage.setItem("adminToken",JSON.stringify(adminToken || ""))
         setIsLoading(false)
-        nav("/admindashboard");
+        nav(redirectTo,{replace:true});
         alert(data.data.message) 
         setIsLoading(false)  
     

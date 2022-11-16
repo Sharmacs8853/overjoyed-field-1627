@@ -9,9 +9,9 @@ import axios from "axios";
 const AdminDashboard = () => {
   const [job, setJobs] = useState([]);
   const [users, setUsers] = useState([]);
-
+  const {REACT_APP_MONGO_URL}=process.env
   const handleJobs = () => {
-    return fetch("http://localhost:8001/job", {
+    return fetch(`${REACT_APP_MONGO_URL}/job`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
 
   // // --------handle user------
   const handleUsers = (job) => {
-    return fetch("http://localhost:8001/registeredusers", {
+    return fetch(`${REACT_APP_MONGO_URL}/registeredusers`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -45,15 +45,19 @@ const AdminDashboard = () => {
 
   // ----handle Delete--------
 
-  const handleDeleteuser = (id) => {
-    console.log(id);
-    axios.delete(`http://localhost:8001/resgisteredusers/${id}`).then((res) => {
-      alert(res.data.msg);
-      handleUsers();
-      console.log("delete", res.data);
-      console.log("delete success");
-    });
-  };
+
+  const handleDelete= (id)=>{
+        
+    console.log(id)
+    axios.delete(`${REACT_APP_MONGO_URL}/resgisteredusers/${id}`)
+    .then(res=>{
+       
+      alert(res.data.msg)
+      handleUsers()
+      console.log("delete",res.data)
+      console.log("delete success")
+    })
+
 
   // ---------delete job------
   const handleDeletejob = (id) => {
