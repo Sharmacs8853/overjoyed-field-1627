@@ -1,7 +1,7 @@
-const { default: mongoose } = require("mongoose")
+const  mongoose = require("mongoose")
 
 
-const jobModel = mongoose.model("job", mongoose.Schema({
+const jobModel =new mongoose.model("job", mongoose.Schema({
     "id": { type: String, required: true },
     "url": { type: String, required: true },
     "job_title": { type: String, required: true },

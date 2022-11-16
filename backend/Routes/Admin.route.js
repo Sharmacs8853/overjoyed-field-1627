@@ -1,5 +1,4 @@
 const { Router } = require("express");
-
 const adminController = Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");

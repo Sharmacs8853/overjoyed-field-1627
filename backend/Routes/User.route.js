@@ -1,10 +1,9 @@
 const { Router } = require("express");
-const { userModel } = require("../Models/user.model");
+const {userModel}=require("../Models/User.model")
 const userController = Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
 
-// ----------USER SIGNUP---------------------//
 userController.post("/signup", async (req, res) => {
   const { email, password ,name,mobile,work_status} = req.body;
   const existing_user = await userModel.findOne({ email });
@@ -17,7 +16,6 @@ userController.post("/signup", async (req, res) => {
     if (err) {
       res.send({"msg":"signup failed ..please try again.."});
     } else {
-      // console.log("i am here");
       const new_user = new userModel({
         email,
         password: hash,
@@ -33,17 +31,11 @@ userController.post("/signup", async (req, res) => {
 });
 
 
-// ---------------USER LOGIN-----------------//
-
 userController.post("/login", async (req, res) => {
     const {email, password} = req.body
 
     const user = await userModel.findOne({email})
-// console.log("user"+user)
-  
-  
-    // console.log(user)
-    // console.log(user_id)
+
     if(user){
 
       const hashed_password = user.password;

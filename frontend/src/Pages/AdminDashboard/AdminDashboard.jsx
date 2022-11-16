@@ -9,11 +9,13 @@ import axios from "axios";
 const AdminDashboard = () => {
   const [job, setJobs] = useState([]);
   const [users, setUsers] = useState([]);
+
   const [isLoading,setIsLoading]=useState(false)
 
   const {REACT_APP_MONGO_URL}=process.env
   const handleJobs = () => {
     setIsLoading(true)
+
     return fetch(`${REACT_APP_MONGO_URL}/job`, {
       method: "GET",
       headers: {
@@ -35,7 +37,10 @@ const AdminDashboard = () => {
 
   // // --------handle user------
   const handleUsers = (job) => {
+
     setIsLoading(true)
+
+
     return fetch(`${REACT_APP_MONGO_URL}/registeredusers`, {
       method: "GET",
       headers: {
@@ -60,6 +65,7 @@ const AdminDashboard = () => {
 
   // ----handle Delete--------
 
+
   const handleDeleteuser = (id) => {
    
     setIsLoading(true)
@@ -73,6 +79,7 @@ const AdminDashboard = () => {
       console.log(err)
     })
   };
+
 
   // ---------delete job------
   const handleDeletejob = (id) => {
