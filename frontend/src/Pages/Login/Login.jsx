@@ -27,6 +27,7 @@ const Login = () => {
 
   const redirectTo=location.state?.data || "/"
 
+
   const successToast=(message)=>{
     toast.success(message, {
       position: "top-center",
@@ -65,6 +66,10 @@ const Login = () => {
       theme: "colored",
       })
   }
+
+
+
+
 
 
 

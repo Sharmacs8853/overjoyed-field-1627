@@ -16,6 +16,7 @@ const JDpage = () => {
 
   const {REACT_APP_MONGO_URL}=process.env
    const {id}= useParams()
+
  
 
    const description =(id)=>{ 
@@ -28,6 +29,7 @@ const JDpage = () => {
     console.log(err)
    })
   
+
    }
   
 useEffect(()=>{

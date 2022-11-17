@@ -7,8 +7,16 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const JobsPage = () => {
     const [job ,setJobs] =useState([]);
+
+
+    const [category,setCategory] = useState(false);
+    const [city,setCity]=useState(false);
+    const [state,setState]=useState(false);
+    const navigation = useNavigate()
+
     const {REACT_APP_MONGO_URL}=process.env;
     const [isLoading,setIsLoading]=useState(false)
+
     const [filter,setFilter]=useState([])
 
 
@@ -27,6 +35,7 @@ const JobsPage = () => {
      console.log(filter)
 
     const handleJobs = () => {
+
         let payload;
        
         if(filter.length===0){
@@ -37,6 +46,7 @@ const JobsPage = () => {
         }
         setIsLoading(true)
         return fetch(`${REACT_APP_MONGO_URL}/job?${payload}`, {
+
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
