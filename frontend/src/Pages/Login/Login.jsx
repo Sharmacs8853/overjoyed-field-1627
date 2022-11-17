@@ -6,11 +6,13 @@ import {
   LoginWrapper,
   RightDivWrapper,
 } from "../../Style/login.style"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {Link} from "react-router-dom";
 import {login} from "../../Redux/AuthReducer/action"
 import { useDispatch,useSelector } from "react-redux";
-import {useNavigate,useLocation} from "react-router-dom"
+import {useNavigate,useLocation,useSearchParams} from "react-router-dom"
 import {IoMdCheckmark} from "react-icons/io"
 import { LoginSmallWrapper } from "../../Style/loginRender.style";
 
@@ -24,43 +26,96 @@ const Login = () => {
   const {isError,isLoading}=useSelector((state)=>{return {isError:state.AuthReducer.isError,isLoading:state.AuthReducer.isLoading}})
 
   const redirectTo=location.state?.data || "/"
- 
+
+  const successToast=(message)=>{
+    toast.success(message, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      })
+  }
+
+  const failedToast=(message)=>{
+    toast.error(message, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      })
+  }
+
+  const warnToast=(message)=>{
+    toast.warn(message,{
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      })
+  }
+
+
+
+
+
 
 
   const handleSubmit=(e)=>{
     e.preventDefault();
     if(!email || !password){
-      alert("Please fill email/password")
+      warnToast("Please fill email/password")
     }
-    else if(email && password){
+     if(email && password){
       
       const payload={
         email:email,
         password:password
        }
-        
+    
        dispatch( login(payload)).then((res)=>{
-        alert(res.payload.msg)
-       if(res.payload.document.token){
-        const user_token=res.payload.document.token;
-        const user_name=res.payload.document.name
-        const user_mobile=res.payload.document.mobile
-        const user_email=res.payload.document.email
-        const user_id=res.payload.document.id
-        
-        const data={
-           name:user_name,
-           mobile:user_mobile,
-           email:user_email,
-           token:user_token,
-           id:user_id
+        if(res.payload.msg==="Something went wrong, try again later"){
+             failedToast(res.payload.msg)
         }
-        
-        localStorage.setItem("profile",JSON.stringify(data))
-        
-         navigate(redirectTo=="/"?"/home":redirectTo,{replace:true})
-       }
-       
+       if(res.payload.msg==="Login successfull"){
+          if(res.payload.document.token){
+            const user_token=res.payload.document.token;
+            const user_name=res.payload.document.name
+            const user_mobile=res.payload.document.mobile
+            const user_email=res.payload.document.email
+            const user_id=res.payload.document.id
+    
+            const data={
+               name:user_name,
+               mobile:user_mobile,
+               email:user_email,
+               token:user_token,
+               id:user_id
+            }
+            
+            localStorage.setItem("profile",JSON.stringify(data))
+            navigate(redirectTo=="/"?"/home":redirectTo,{replace:true})
+           }
+    
+        }
+         if(res.payload.msg==="Login failed"){
+           failedToast(res.payload.msg)
+        }
+         if(res.payload.msg==="User not found..please Signup"){
+            warnToast(res.payload.msg)
+        }
+
        }).catch((err)=>{
         console.log(err)
         
@@ -69,8 +124,7 @@ const Login = () => {
 
   }
 
-  
- 
+
   React.useEffect(() => {
     function handleResize() {
      setWindowSize(window.innerWidth)
@@ -78,14 +132,8 @@ const Login = () => {
     window.addEventListener('resize', handleResize)
   })
 
-
- 
   return (
-
-
-   
-    
-    
+ 
      size<1300 ?<LoginSmallWrapper>
            <div  className="small-login-main-div">
            <h2 className="small-login-heading">Login to Naukri</h2>
@@ -145,8 +193,10 @@ const Login = () => {
            </div>
        </RightDivWrapper>
 
-    
+       <ToastContainer />
     </LoginWrapper>
+          
+         
   );
 };
 
