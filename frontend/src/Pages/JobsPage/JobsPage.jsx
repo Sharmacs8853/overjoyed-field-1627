@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const JobsPage = () => {
     const [job ,setJobs] =useState([]);
+
+
     const [category,setCategory] = useState(false);
     const [city,setCity]=useState(false);
     const [state,setState]=useState(false);
@@ -30,7 +32,7 @@ const JobsPage = () => {
         setFilter(newFilter)
       }
 
-
+     console.log(filter)
 
     const handleJobs = () => {
 

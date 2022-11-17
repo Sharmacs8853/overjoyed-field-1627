@@ -43,7 +43,7 @@ const AdminLogin = () => {
         localStorage.setItem("adminToken",JSON.stringify(adminToken || ""))
         setIsLoading(false)
         nav(redirectTo,{replace:true});
-        alert(data.data.message) 
+        alert(data.data.msg) 
         setIsLoading(false)  
     
     } catch (err) {
